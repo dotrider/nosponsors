@@ -35,7 +35,4 @@ app.get(`/auth/logout`, logout);
 
 
 
-
-
-
 app.listen(SERVER_PORT, () => console.log(`Running on ${SERVER_PORT}`));
