@@ -6,31 +6,42 @@ class Blogs extends Component{
      super();
      this.state = {
          blogs: [],
-         comments: []
+         comments: [],
+         blogAndComments: []
      }
      
  }
 
  componentDidMount(){
-     this.getAllBlogs()
-     this.getAllComments()
+    //  this.getAllBlogs()
+    //  this.getAllComments()
+    this.getBlogsAndComments()
+
  }
  
- getAllBlogs = async () => {
-     const blogs = await axios.get(`/api/get_blogs`)
-     console.log('blogs',blogs.data)
-     this.setState({
-         blogs: blogs.data
-     })
- }
+//  getAllBlogs = async () => {
+//      const blogs = await axios.get(`/api/get_blogs`)
+//      console.log('blogs',blogs.data)
+//      this.setState({
+//          blogs: blogs.data
+//      })
+//  }
 
- getAllComments = async () => {
-     const comments = await axios.get('/api/get_comments')
-     console.log('comments', comments.data)
-     this.setState({
-         comments: comments.data
-     })
- }
+//  getAllComments = async () => {
+//      const comments = await axios.get('/api/get_comments')
+//      console.log('comments', comments.data)
+//      this.setState({
+//          comments: comments.data
+//      })
+//  }
+
+getBlogsAndComments = async () => {
+    const blogAndComments = await axios.get('/api/get_blog_comments')
+    console.log('blogAndComments', blogAndComments.data)
+    this.setState({
+        blogAndComments: blogAndComments.data
+    })
+}
 
  logout = () => {
      console.log('logout',this.logout)
@@ -40,18 +51,22 @@ class Blogs extends Component{
 
 
 render(){
-    const mappedBlogs = this.state.blogs.map(blog => {
-        return <h1>{blog.blog}</h1>
-    })
+    // const mappedBlogs = this.state.blogs.map(blogs => {
+    //     return <div>{blogs.blog}</div>
+    // })
 
-    const mappedComments = this.state.comments.map(comment => {
-        return <div>{comment.comment}</div>
+    const mappedComments = this.state.blogAndComments.map(data => {
+        return <div>
+            <p>{data.blog}</p>
+            <p>{data.comment}</p>
+        </div>
+
     })
     return(
         <div>   
             <button onClick={this.logout}>Logout</button>
                 BLOGS
-            {mappedBlogs}
+            
             {mappedComments}
          
 

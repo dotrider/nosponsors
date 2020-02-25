@@ -5,7 +5,7 @@ const massive = require('massive');
 
 const {SERVER_PORT, SESSION_SECRET, CONNECTION_STR} = process.env;
 const {login, register, userSession, logout} = require('./controller/authCtr');
-const {getBlogs} = require('./controller/blogsCtr');
+const {getBlogs, getBlogsAndComments} = require('./controller/blogsCtr');
 const {getBlogComments} = require('./controller/blogCommentsCtr');
 
 const app = express();
@@ -37,6 +37,9 @@ app.get('/api/get_blogs', getBlogs);
 
 //BlOG COMMENTS
 app.get('/api/get_comments', getBlogComments)
+
+//BLOG and COMMENTS
+app.get('/api/get_blog_comments', getBlogsAndComments);
 
 
 
