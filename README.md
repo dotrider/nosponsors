@@ -94,7 +94,7 @@ profile_pic TEXT DEFAULT ''
 CREATE TABLE blogs(
 blog_id SERIAL PRIMARY KEY,
 blog TEXT,
-user_id REFERENCES users(user_id),
+user_id INT REFERENCES users(user_
  );
  ```
 
@@ -102,7 +102,7 @@ user_id REFERENCES users(user_id),
 CREATE TABLE events(
 event_id SERIAL PRIMARY KEY,
 event TEXT,
-user_id REFERENCES user(user_id),    
+user_id INT REFERENCES user(user_id),    
 );
 ```
 
@@ -110,8 +110,8 @@ user_id REFERENCES user(user_id),
 CREATE TABLE blog_comments(
 commment_id SERIAL PRIMARY KEY,
 comment TEXT,
-user_id REFERENCES users(user_id),
-blog_id REFERENCES blogs(blog_id)  
+user_id INT REFERENCES users(user_id),
+blog_id INT REFERENCES blogs(blog_id)  
 );
 ```
 
@@ -119,7 +119,7 @@ blog_id REFERENCES blogs(blog_id)
 CREATE TABLE event_comments(
 commment_id SERIAL PRIMARY KEY,
 comment TEXT,
-user_id REFERENCES users(user_id),
-event_id REFERENCES events(event_id)  
+user_id INT REFERENCES users(user_id),
+event_id INT REFERENCES events(event_id)  
 );
 ```

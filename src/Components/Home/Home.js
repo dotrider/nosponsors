@@ -1,4 +1,5 @@
-import React,{Component} from 'react'
+import React,{Component} from 'react';
+import Login from '../Login/Login';
 
 class Home extends Component{
  constructor(){
@@ -9,7 +10,8 @@ class Home extends Component{
 render(){
     return(
         <div>
-
+            <Login/>
+            HOME
         </div>
     )
 }
