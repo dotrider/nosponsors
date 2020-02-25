@@ -1,0 +1,15 @@
+header {
+    background-color: dodgerblue;
+}
+.navBar {
+  display: flex;
+  height: 100px;
+  width: 200px;
+  font-size: 1.8rem;
+  justify-content: space-around;
+  align-items: center;
+}
+
+a {
+    align-content: space-between;
+}

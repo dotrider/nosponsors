@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
+import './Login.css'
 import { connect } from "react-redux";
 import { setUser } from "../../redux/reducer";
+import Home from '../Home/Home'
 
 class Login extends Component {
   constructor() {
@@ -42,87 +44,81 @@ class Login extends Component {
     const { username, email, password, register } = this.state;
     console.log('user',this.props.user);
     return (
-      <section>
+      <section className='mainCont'> 
+  
+        <div className='login'>
         {!register ? (
           <div>
-            <h3>Login</h3>
             <form
               onSubmit={e => {
                 e.preventDefault();
                 this.login(email, password);
-              }}
-            >
-              <label>Email:</label>
+              }}>
               <input
                 type="email"
                 name="email"
+                placeholder="Email"
                 value={email}
                 onChange={this.handleChange}
               />
-              <label>Password:</label>
+              <br/>
               <input
                 type="password"
                 name="password"
+                placeholder="Password"
                 value={password}
                 onChange={this.handleChange}
               />
-              <input type="submit" value="Login" />
-            </form>
-            {/* register button */}
-            <h4>Don't have an account?</h4>
-            <button
-              onClick={() =>
-                this.setState({
-                  register: true
-                })
-              }
-            >
-              Register
-            </button>
+              <br/>
+              <button className='loginBtn btn' type="submit" >Login</button>
+              <br/>
+              <button className='btn' onClick={() => this.setState({ register: true})}> Sign up</button>
+            </form>  
+           
           </div>
         ) : (
           <div>
-            <h3>Register</h3>
             <form onSubmit={(e) => {
                 e.preventDefault()
                 this.register(username, email, password)
               }}>
-              <label>Username:</label>
-              <input
+              <input 
                 type="text"
                 name="username"
+                placeholder="Username"
                 value={username}
                 onChange={this.handleChange}
               />
-              <label>Email:</label>
-              <input
+              <br/>
+              <input 
                 type="email"
                 name="email"
+                placeholder="Email"
                 value={email}
                 onChange={this.handleChange}
               />
-              <label>Password:</label>
-              <input
+              <br/>
+              <input 
                 type="password"
                 name="password"
+                placeholder="Password"
                 value={password}
                 onChange={this.handleChange}
               />
-              <input type="submit" value="Register" />
+              <br/>
+              <button className='btn' type="submit" >Register</button> 
             </form>
+            <br/>
             <h4>Already have an account</h4>
-            <button
+            <button className='btn'
               onClick={() =>
                 this.setState({
-                  register: false
-                })
-              }
-            >
-              Login
-            </button>
+                  register: false})}>Login</button>
           </div>
         )}
-      </section>
+        </div>
+  </section>
+   
     );
   }
 }

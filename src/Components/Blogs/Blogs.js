@@ -1,39 +1,46 @@
 import React,{Component} from 'react';
+import { connect } from 'react-redux';
+import { setUser} from '../../redux/reducer';
+import BlogForm from '../BlogForm/BlogForm';
 import axios from 'axios';
+import './Blogs.css' 
+
 
 class Blogs extends Component{
  constructor(){
      super();
      this.state = {
-         blogs: [],
-         comments: [],
-         blogAndComments: []
+         blogs: [], 
+         blogAndComments: [],
+         toggle: false
      }
      
  }
 
  componentDidMount(){
-    //  this.getAllBlogs()
-    //  this.getAllComments()
     this.getBlogsAndComments()
-
- }
+    this.getAllBlogs()
+}
  
-//  getAllBlogs = async () => {
-//      const blogs = await axios.get(`/api/get_blogs`)
-//      console.log('blogs',blogs.data)
-//      this.setState({
-//          blogs: blogs.data
-//      })
-//  }
 
-//  getAllComments = async () => {
-//      const comments = await axios.get('/api/get_comments')
-//      console.log('comments', comments.data)
-//      this.setState({
-//          comments: comments.data
-//      })
-//  }
+ getAllBlogs = async () => {
+     const blogs = await axios.get(`/api/blogs`)
+     console.log('blogs',blogs.data)
+     this.setState({
+         blogs: blogs.data,
+     })
+ }
+
+////////////
+ postBlog = (blog) => {
+     console.log(blog)
+    axios.post('/api/blogs', blog).then(res => {
+       this.setState({
+           blogs: res.data
+       })
+    })
+}
+/////////////
 
 getBlogsAndComments = async () => {
     const blogAndComments = await axios.get('/api/get_blog_comments')
@@ -43,31 +50,44 @@ getBlogsAndComments = async () => {
     })
 }
 
- logout = () => {
+logout = () => {
      console.log('logout',this.logout)
     axios.get('/auth/logout')
+    this.props.setUser({})
     this.props.history.push('/')
   }
 
 
-render(){
-    // const mappedBlogs = this.state.blogs.map(blogs => {
-    //     return <div>{blogs.blog}</div>
-    // })
+handleToggle =()=> {
+    this.setState({
+        toggle: !this.state.toggle
+    })
+}  
 
+render(){
     const mappedComments = this.state.blogAndComments.map(data => {
         return <div>
             <p>{data.blog}</p>
             <p>{data.comment}</p>
         </div>
-
     })
+
     return(
-        <div>   
+        <div className='blogs'>   
+        
             <button onClick={this.logout}>Logout</button>
                 BLOGS
-            
+            <section className='blogsAndComments'>
+                {!this.state.toggle?(
+                <button onClick={this.handleToggle}>Post something!</button>)
+                :
+                (<div>
+                <BlogForm postBlog = {this.postBlog} toggle={this.handleToggle}/>
+                </div>)}
+                
             {mappedComments}
+            </section>
+           
          
 
         </div>
@@ -76,4 +96,10 @@ render(){
 
 }
 
-export default Blogs
+const mapStateToProps = state => state;
+
+const mapDispatchToProps = {
+  setUser
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Blogs);

@@ -10,17 +10,11 @@ profile_pic TEXT DEFAULT 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wC
 
 -- CREATE TABLE blogs(
 -- blog_id SERIAL PRIMARY KEY,
+-- blog_title VARCHAR(50),
+-- blog_img TEXT,
 -- blog TEXT,
 -- user_id REFERENCES users(user_id),
 --  );
-
--- --EVENTS
-
--- CREATE TABLE events(
--- event_id SERIAL PRIMARY KEY,
--- event TEXT,
--- user_id REFERENCES user(user_id),    
--- );
 
 -- --BLOG COMMENTS
 
@@ -30,6 +24,20 @@ profile_pic TEXT DEFAULT 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wC
 -- user_id REFERENCES users(user_id),
 -- blog_id REFERENCES blogs(blog_id)  
 -- );
+
+
+--------------------------------------------------------
+--------------------------------------------------------
+
+-- --EVENTS
+
+-- CREATE TABLE events(
+-- event_id SERIAL PRIMARY KEY,
+-- event_title VARCHAR(50),
+-- event TEXT,
+-- user_id REFERENCES user(user_id),    
+-- );
+
 
 -- --EVENT COMMENTS
 

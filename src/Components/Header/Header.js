@@ -1,11 +1,15 @@
 import React from 'react';
+import './Header.css';
 
 const Footer = () => {
 
     return(
-        <div>
-            Header
-        </div>
+        <header>
+            <nav className='navBar'>
+                 <a>Home</a>
+                <a>About</a>
+            </nav>
+        </header>
     )
 }
 
