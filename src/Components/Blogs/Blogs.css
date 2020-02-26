@@ -5,3 +5,14 @@
     margin: 0 auto;
     border: 1px solid;
 }
+
+.mappedblogs {
+    height: 10%;
+    border: 1px dotted dodgerblue;
+}
+
+.blogs {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}

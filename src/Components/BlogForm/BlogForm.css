@@ -1,9 +1,18 @@
-.blogForm {
+/* .blogForm {
     width: 50%;
     height: 150px
-}
+} */
 
 textarea {
-    width: 80%;
+    width: 200px;
     height: 100px;
 }
+
+.addBlog {
+    display: flex;
+    width: 200px;
+}
+
+/* .postblogform {
+
+} */

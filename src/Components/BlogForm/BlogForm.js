@@ -42,16 +42,21 @@ addBlog = () => {
 render(){
 const {blog_img, blog_title, blog} = this.state
     return(
+        <div>
         <section className='addBlog'>   
+                <div className='postblogform'>
                 <h2>Post a Blog:</h2>
-                <div className='blogForm'>
                 <input value={blog_img} name='blog_img' placeholder='Image' onChange={this.handleChange}/>
                 <input value={blog_title} name='blog_title' placeholder='Title' onChange={this.handleChange}/>
                 <textarea value={blog} name='blog' placeholder='blog'onChange={this.handleChange}/>
                 <br/>
                 <input onClick={this.addBlog} type='submit' value="Post" />
                 </div>
+                <br/>
         </section>
+        <br/>
+         <button onClick={this.props.toggle}>Cancel</button>
+      </div>
     )
 }
 

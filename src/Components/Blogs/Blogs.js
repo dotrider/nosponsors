@@ -11,27 +11,28 @@ class Blogs extends Component{
      super();
      this.state = {
          blogs: [], 
-         blogAndComments: [],
-         toggle: false
+        //  blogAndComments: [],
+        comments:[],
+        toggle: false
      }
      
  }
 
  componentDidMount(){
-    this.getBlogsAndComments()
+    // this.getBlogsAndComments()
     this.getAllBlogs()
+    this.getAllComments()
 }
  
-
+///BLOG SECTION///
  getAllBlogs = async () => {
      const blogs = await axios.get(`/api/blogs`)
      console.log('blogs',blogs.data)
      this.setState({
-         blogs: blogs.data,
+         blogs: blogs.data
      })
  }
 
-////////////
  postBlog = (blog) => {
      console.log(blog)
     axios.post('/api/blogs', blog).then(res => {
@@ -40,15 +41,28 @@ class Blogs extends Component{
        })
     })
 }
-/////////////
 
-getBlogsAndComments = async () => {
-    const blogAndComments = await axios.get('/api/get_blog_comments')
-    console.log('blogAndComments', blogAndComments.data)
+///COMMENTS TO BLOG SECTION///
+
+getAllComments = async () => {
+    const comments = await axios.get('/api/comments')
+    console.log(`comment`,comments)
     this.setState({
-        blogAndComments: blogAndComments.data
+        comments: comments.data
     })
 }
+
+
+
+/////////////
+
+// getBlogsAndComments = async () => {
+//     const blogAndComments = await axios.get('/api/get_blog_comments')
+//     console.log('blogAndComments', blogAndComments.data)
+//     this.setState({
+//         blogAndComments: blogAndComments.data
+//     })
+// }
 
 logout = () => {
      console.log('logout',this.logout)
@@ -64,20 +78,29 @@ handleToggle =()=> {
     })
 }  
 
+
 render(){
-    const mappedComments = this.state.blogAndComments.map(data => {
-        return <div>
-            <p>{data.blog}</p>
-            <p>{data.comment}</p>
-        </div>
+    // const mappedComments = this.state.blogAndComments.map(data => {
+    //     return <div>
+    //         <p>{data.blog}</p>
+    //         <p>{data.comment}</p>
+    //     </div>
+    // })
+
+    const mappedblogs = this.state.blogs.map(post => {
+        return <div className='mappedblogs'>{post.blog}</div>
+    })
+
+    const mappedComments = this.state.comments.map(comment => {
+        return <div className='mappedblogs'>{comment.comment}</div>
     })
 
     return(
         <div className='blogs'>   
-        
+            <div>
             <button onClick={this.logout}>Logout</button>
+                
                 BLOGS
-            <section className='blogsAndComments'>
                 {!this.state.toggle?(
                 <button onClick={this.handleToggle}>Post something!</button>)
                 :
@@ -85,12 +108,14 @@ render(){
                 <BlogForm postBlog = {this.postBlog} toggle={this.handleToggle}/>
                 </div>)}
                 
+                </div>
+            <section className='blogsAndComments'>          
+            {/* {mappedComments} */}
+            {mappedblogs}
+            <br/>
             {mappedComments}
             </section>
-           
-         
-
-        </div>
+           </div>
     )
 }
 
