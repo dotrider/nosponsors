@@ -55,15 +55,19 @@ getAllComments = async () => {
 postComment = async (comment) => {
     axios.post('/api/comments',comment)
     this.setState({
-        comment: comment.data
+        comments: comment.data
     })
 }
 
-handleCommentClick async = (comment, blog_id) => {
-    let body = {comment, blog_id}
-    axios.post('/api/comments',body)
+// handleCommentClick = (comment, blog_id) => {
+//     let body = {comment, blog_id}
+//     axios.post('/api/comments', body).then( res => {
+//         this.setState({
+//             comments: res.data
+//         })
+//     })
 
-}
+// }
 /////////////
 
 // getBlogsAndComments = async () => {
