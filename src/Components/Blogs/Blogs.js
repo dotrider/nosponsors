@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import { connect } from 'react-redux';
 import { setUser} from '../../redux/reducer';
+import {getSession} from '../../redux/reducer';
 import PostBlog from '../PostBlog/PostBlog';
 import axios from 'axios';
 import DisplayBlogs from '../DisplayBlogs/DisplayBlogs';
@@ -9,21 +10,25 @@ import './Blogs.css'
 
 
 class Blogs extends Component{
- constructor(){
-     super();
+ constructor(props){
+     super(props);
      this.state = {
          blogs: [], 
-        //  blogAndComments: [],
+        // From my join table - blog and comments => blogAndComments: [],
         comments:[],
-        toggle: false
+        toggleBlog: false
      }
      
  }
 
  componentDidMount(){
-    // this.getBlogsAndComments()
+    // From my join table - blog and comments => this.getBlogsAndComments()
+    this.props.getSession()
+    this.props.setUser()
     this.getAllBlogs()
     this.getAllComments()
+    console.log('ComponentDidMount', this.props)
+  
 }
  
 ///BLOG SECTION///
@@ -55,10 +60,11 @@ getAllComments = async () => {
 }
 
 postComment = async (comment) => {
-    axios.post('/api/comments',comment)
-    this.setState({
-        comments: comment.data
-    })
+    axios.post('/api/comments',comment).then( res =>{
+        this.setState({
+            comments: res.data
+        })
+    }) 
 }
 
 // handleCommentClick = (comment, blog_id) => {
@@ -72,6 +78,7 @@ postComment = async (comment) => {
 // }
 /////////////
 
+//From my join table - blog and comments
 // getBlogsAndComments = async () => {
 //     const blogAndComments = await axios.get('/api/get_blog_comments')
 //     console.log('blogAndComments', blogAndComments.data)
@@ -90,12 +97,15 @@ logout = () => {
 
 handleToggle =()=> {
     this.setState({
-        toggle: !this.state.toggle
+        toggleBlog: !this.state.toggleBlog
     })
 }  
 
 
 render(){
+    //From my join table - blog and comments
+    // const mappedComments = this.state.blogAndComments.map(post => {
+    //     return <DisplayBlogs key={post.id} title={post.blog_title} blog={post.blog} postComment={this.postComment}/>})
     // const mappedComments = this.state.blogAndComments.map(data => {
     //     return <div>
     //         <p>{data.blog}</p>
@@ -103,26 +113,30 @@ render(){
     //     </div>
     // })
 
+//////////////////
+console.log("COMMENTS!", this.state.comments)
+console.log("POSTS!", this.state.blogs)
     const mappedblogs = this.state.blogs.map(post => {
-        return <DisplayBlogs key={post.id} title={post.blog_title} blog={post.blog} toggle={this.handleToggle}/>
+        const filteredComments = this.state.comments.filter(comment => {
+            return comment.blog_id === post.blog_id
+        })
+        return <DisplayBlogs blogId={post.blog_id} comments={filteredComments} key={post.id} title={post.blog_title} blog={post.blog} postComment={this.postComment}/>
     })
-    const mappedComments = this.state.comments.map(comment => {
-        return <div className='mappedblogs'>{comment.comment}</div>
-    })
+
 
     return(
         <section className='Mainblogs'>   
             <button className='logoutBtn' onClick={this.logout}>Logout</button>
             <div>        
-                {!this.state.toggle?(<button className='composeBlogBtn' onClick={this.handleToggle}>Create Post</button>)
+                {!this.state.toggleBlog?(<button className='composeBlogBtn' onClick={this.handleToggle}>Create Post</button>)
                 :
                 (<div> <PostBlog postBlog = {this.postBlog} toggle={this.handleToggle}/> </div>)}               
             </div>
 
         <section className='blogsAndComments'>          
-            {/* {mappedComments} */}
+            {/* From my join table - blog and comments {mappedComments} */}
             {mappedblogs}
-            {mappedComments}
+            {/* {mappedComments} */}
             </section>
            </section>
     )
@@ -133,7 +147,9 @@ render(){
 const mapStateToProps = state => state;
 
 const mapDispatchToProps = {
-  setUser
+  setUser,
+  getSession
+
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Blogs);

@@ -37,3 +37,15 @@
     cursor: pointer;
     outline:none;
 }
+
+.commentSect {
+    width: 90%;
+    background-color: rgba(160, 155, 155, 0.137);
+    border-radius: 5px;
+    margin: 5px auto;
+    box-shadow: 2px 2px 5px 0 rgba(42, 41, 41, 0.281);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 15px;
+}

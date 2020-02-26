@@ -24,12 +24,13 @@ addComment = () => {
 
     let newComment = {
         comment,
+        blog_id: this.props.blogId
     }
    this.props.postComment(newComment)
    this.setState({
     comment:''
    }) 
-   this.props.toggle()
+   this.props.toggleComment()
 }
 
  
@@ -40,7 +41,7 @@ const {comment} = this.state
         <section className='composeComment'>   
                 <div className='commentCont'>
                 <input className='commentInput' value={comment} name='comment' placeholder='comment here' onChange={this.handleChange}/>
-                <input className='submitBtn ' onClick={this.addBlog} type='submit' value="add" />
+                <input className='submitBtn ' onClick={this.addComment} type='submit' value="add" />
                 </div>
                 <div> 
                 <button className='cancelBtn' onClick={this.props.toggleComment}/>

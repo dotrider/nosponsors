@@ -5,3 +5,8 @@ VALUES
 -- returning *;
 
 SELECT * FROM blog_comments;
+
+-- SELECT * FROM blogs
+-- join blog_comments
+-- on(blogs.user_id = blog_comments.user_id)
+-- where blogs.user_id = $2;
