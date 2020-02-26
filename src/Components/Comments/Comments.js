@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
-import './BlogForm.css';
-
+import './Comments.css';
 
 
 class Comments extends Component{
@@ -37,18 +36,16 @@ addComment = () => {
 render(){
 const {comment} = this.state
     return(
-        <div>
-        <section className='addComment'>   
+  
+        <section className='commentCont'>   
                 <div>
                 <input value={comment} name='comment' placeholder='comment here' onChange={this.handleChange}/>
-                <br/>
                 <input onClick={this.addBlog} type='submit' value="add" />
                 </div>
-                <br/>
-        </section>
-        <br/>
-         <button onClick={this.props.toggle}>Cancel</button>
-      </div>
+                <div> 
+                <button onClick={this.props.toggle}>Cancel</button>
+                </div>
+        </section>         
     )
 }
 

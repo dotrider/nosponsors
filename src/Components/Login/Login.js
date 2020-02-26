@@ -12,7 +12,8 @@ class Login extends Component {
       username: "",
       email: "",
       password: "",
-      register: false
+      register: false,
+      loginStatus: false,
     };
   }
 
@@ -26,7 +27,7 @@ class Login extends Component {
   login = async (email, password) => {
     console.log('login',this.props.user)
     let body = { email, password };
-    const res = await axios.post(`/auth/login`, body);
+    const res = await axios.post(`/auth/login`, body)
     this.props.setUser(res.data);
     this.props.history.push('/blogs');
   };

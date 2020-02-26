@@ -4,7 +4,8 @@ import './reset.css'
 import './App2.css';
 import Header from './Components/Header/Header';
 import {Switch, Route} from 'react-router-dom'
-import Blogs from './Components/Blogs/Blogs';
+import DisplayBlogs from './Components/DisplayBlogs/DisplayBlogs';
+import Blogs from './Components/Blogs/Blogs'
 import Events from './Components/Events/Events';
 import Login from './Components/Login/Login'
 

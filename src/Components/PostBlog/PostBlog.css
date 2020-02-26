@@ -1,0 +1,71 @@
+.composeBlog {
+    width: 50%;
+    background-color: rgba(29, 25, 25, 0.137);
+    border-radius: 5px;
+    margin: 25px auto;
+    padding: 15px;
+}
+
+.blogContent {
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px;    
+}
+
+.postInput {
+    width: 100%;
+}
+
+.blogPost {
+    height: 50px
+}
+
+.submitBtn {
+    width: 100px;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+.cancelCont {
+    height: 25px;  
+}
+.cancelBtn {
+    background: url(../../image/buttons/iconfinder_Close_1031533.svg) no-repeat top left ;
+    background-size: contain;
+    height: 25px;
+    width: 25px;
+    border: none;
+    cursor: pointer;
+    outline:none;
+}
+
+.composeBlogBtn {
+	box-shadow:inset 0px 0px 11px 0px #f5978e;
+	background:linear-gradient(to bottom, #ec3b2e 5%, #be281a 100%);
+	background-color:#da3428;
+	border-radius:10px;
+	border:1px solid #d02718;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:12px;
+	font-weight:bold;
+	padding:10px 14px;
+	text-decoration:none;
+	text-shadow:-1px 2px 7px #cc2c21;
+}
+.composeBlogBtn:hover {
+	background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+	background-color:#c62d1f;
+}
+.composeBlogBtn:active {
+	position:relative;
+	top:1px;
+}
+
+        

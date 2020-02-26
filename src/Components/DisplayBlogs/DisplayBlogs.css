@@ -1,0 +1,39 @@
+
+
+.displayCont {
+    width: 50%;
+    background-color: rgba(29, 25, 25, 0.137);
+    border-radius: 5px;
+    margin: 25px auto;
+    box-shadow: 2px 2px 5px 0 rgba(42, 41, 41, 0.281);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 15px;
+}
+
+.blogTitle {
+    font-size: larger;
+    color: white;
+    padding-bottom: 10px;
+}
+
+.blog {
+    width: 95%;
+    min-height: 50px;
+    padding: 5px;
+}
+
+.replySect {
+    height: 25px;
+}
+
+.replyBtn {
+    background: url(../../image/buttons/iconfinder_Pinterest_UI-13_2540585.svg) no-repeat top left ;
+    background-size: contain;
+    height: 40px;
+    width: 40px;
+    border: none;
+    cursor: pointer;
+    outline:none;
+}
