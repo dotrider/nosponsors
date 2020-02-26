@@ -52,8 +52,18 @@ getAllComments = async () => {
     })
 }
 
+postComment = async (comment) => {
+    axios.post('/api/comments',comment)
+    this.setState({
+        comment: comment.data
+    })
+}
 
+handleCommentClick async = (comment, blog_id) => {
+    let body = {comment, blog_id}
+    axios.post('/api/comments',body)
 
+}
 /////////////
 
 // getBlogsAndComments = async () => {
@@ -88,7 +98,9 @@ render(){
     // })
 
     const mappedblogs = this.state.blogs.map(post => {
-        return <div className='mappedblogs'>{post.blog}</div>
+        return <div className='mappedblogs'>
+            <h2>{post.blog_title}</h2>
+            <p>{post.blog}</p><button>Reply</button></div>
     })
 
     const mappedComments = this.state.comments.map(comment => {

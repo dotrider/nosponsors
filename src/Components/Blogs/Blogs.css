@@ -7,10 +7,13 @@
 }
 
 .mappedblogs {
-    height: 10%;
+    height: 20%;
     border: 1px dotted dodgerblue;
 }
-
+h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
 .blogs {
     display: flex;
     justify-content: center;
