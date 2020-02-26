@@ -1,0 +1,21 @@
+.composeComment {
+    width: 80%;
+    background-color: rgba(29, 25, 25, 0.137);
+    border-radius: 5px;
+    margin: 25px auto;
+    padding: 15px;
+}
+
+.commentCont {
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px;   
+}
+
+.commentInput {
+    width: 100%;
+    height: 35px;
+}
+

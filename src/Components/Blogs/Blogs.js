@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import { connect } from 'react-redux';
 import { setUser} from '../../redux/reducer';
-import BlogForm from '../PostBlog/PostBlog';
+import PostBlog from '../PostBlog/PostBlog';
 import axios from 'axios';
 import DisplayBlogs from '../DisplayBlogs/DisplayBlogs';
 import './Blogs.css' 
@@ -104,7 +104,7 @@ render(){
     // })
 
     const mappedblogs = this.state.blogs.map(post => {
-        return <DisplayBlogs key={post.id} title={post.blog_title} blog={post.blog}/>
+        return <DisplayBlogs key={post.id} title={post.blog_title} blog={post.blog} toggle={this.handleToggle}/>
     })
     const mappedComments = this.state.comments.map(comment => {
         return <div className='mappedblogs'>{comment.comment}</div>
@@ -112,16 +112,14 @@ render(){
 
     return(
         <section className='Mainblogs'>   
-            <button onClick={this.logout}>Logout</button>
+            <button className='logoutBtn' onClick={this.logout}>Logout</button>
             <div>        
-                {!this.state.toggle?(
-                <button className='composeBlogBtn' onClick={this.handleToggle}>Create Post</button>)
+                {!this.state.toggle?(<button className='composeBlogBtn' onClick={this.handleToggle}>Create Post</button>)
                 :
-                (<div>
-                <BlogForm postBlog = {this.postBlog} toggle={this.handleToggle}/>
-                </div>)}               
-                </div>
-            <section className='blogsAndComments'>          
+                (<div> <PostBlog postBlog = {this.postBlog} toggle={this.handleToggle}/> </div>)}               
+            </div>
+
+        <section className='blogsAndComments'>          
             {/* {mappedComments} */}
             {mappedblogs}
             {mappedComments}
