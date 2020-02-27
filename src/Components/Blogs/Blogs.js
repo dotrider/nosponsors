@@ -120,7 +120,13 @@ console.log("POSTS!", this.state.blogs)
         const filteredComments = this.state.comments.filter(comment => {
             return comment.blog_id === post.blog_id
         })
-        return <DisplayBlogs blogId={post.blog_id} comments={filteredComments} key={post.id} title={post.blog_title} blog={post.blog} postComment={this.postComment}/>
+        return <DisplayBlogs 
+        key={post.id} 
+        blogId={post.blog_id} 
+        title={post.blog_title} 
+        blog={post.blog} 
+        comments={filteredComments}
+        postComment={this.postComment}/>
     })
 
 

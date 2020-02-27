@@ -1,6 +1,6 @@
 
 
-.displayCont {
+.displayBlogsCont {
     width: 50%;
     background-color: rgba(29, 25, 25, 0.137);
     border-radius: 5px;
@@ -20,7 +20,7 @@
 
 .blog {
     width: 95%;
-    min-height: 50px;
+    min-height: 30px;
     padding: 5px;
 }
 
@@ -38,14 +38,11 @@
     outline:none;
 }
 
-.commentSect {
-    width: 90%;
+.commentsSec {
+    width: 85%;
     background-color: rgba(160, 155, 155, 0.137);
     border-radius: 5px;
-    margin: 5px auto;
+    margin: 15px auto 0;
     box-shadow: 2px 2px 5px 0 rgba(42, 41, 41, 0.281);
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 15px;
+    padding: 10px;
 }
