@@ -20,11 +20,11 @@ handleCommentToggle= () => {
         const {title, blog, date} =this.props
 
         const mappedComments = this.props.comments.map(comment => {
-            return <div className='commentsSec'>{comment.comment}</div>
+        return <div className='commentCont'> <p className='font'>{comment.post_date}</p><div key={comment.id} className='commentsSec'> {comment.comment}</div></div>
         })
         return(
             <section className='displayBlogsCont'>
-              <div className='blogTitle'><h2>{title}{date}</h2></div> 
+              <div className='blogTitle'><h2>{title}<span className='date'>{date}</span></h2></div> 
                 <div className='blog'><p>{blog}</p></div> 
                 <div>
                 {!this.state.toggleComment?
@@ -33,7 +33,7 @@ handleCommentToggle= () => {
                 (<div><Comments blogId={this.props.blogId} toggleComment={this.handleCommentToggle} postComment={this.props.postComment}/></div>)}
                 </div>
                 <div>
-                 {mappedComments}   
+                 {mappedComments} 
                 </div>
             </section>
         )

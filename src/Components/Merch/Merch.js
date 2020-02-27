@@ -1,19 +1,19 @@
 import React,{Component} from 'react'
 
-class Events extends Component{
+class Merch extends Component{
  constructor(){
      super();
      
  }
 
 render(){
-    return(
+    return( 
         <div>
-            EVENTS
+            Merch
         </div>
     )
 }
 
 }
 
-export default Events
+export default Merch

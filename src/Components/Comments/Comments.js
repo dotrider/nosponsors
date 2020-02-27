@@ -21,10 +21,11 @@ handleChange = (e) => {
 
 addComment = () => {
     const {comment} = this.state
-
+    const post_date = new Date(Date.now()).toISOString()
     let newComment = {
         comment,
-        blog_id: this.props.blogId
+        blog_id: this.props.blogId,
+        post_date
     }
    this.props.postComment(newComment)
    this.setState({

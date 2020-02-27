@@ -1,12 +1,11 @@
 import React from 'react';
 // import './App.css';
 import './reset.css'
-import './App2.css';
+import './App2.css'
 import Header from './Components/Header/Header';
 import {Switch, Route} from 'react-router-dom'
-import DisplayBlogs from './Components/DisplayBlogs/DisplayBlogs';
 import Blogs from './Components/Blogs/Blogs'
-import Events from './Components/Events/Events';
+import Merch from './Components/Merch/Merch';
 import Login from './Components/Login/Login'
 
 function App() {
@@ -16,7 +15,7 @@ function App() {
       <Switch>
         <Route exact path = '/' component={Login}/>
         <Route path = '/blogs' component={Blogs} />
-        <Route path = '/events' component={Events} />
+        <Route path = '/Merch' component={Merch} />
       </Switch>
     </div>
   );

@@ -39,10 +39,22 @@
 }
 
 .commentsSec {
-    width: 85%;
+    width: 90%;
     background-color: rgba(160, 155, 155, 0.137);
     border-radius: 5px;
     margin: 15px auto 0;
     box-shadow: 2px 2px 5px 0 rgba(42, 41, 41, 0.281);
     padding: 10px;
+}
+.commentCont{
+    width: 85%;
+    background-color: rgba(160, 155, 155, 0.137);
+    border-radius: 5px;
+    margin: 15px auto 0;
+    box-shadow: 2px 2px 5px 0 rgba(42, 41, 41, 0.281);
+
+}
+
+.font {
+    font-size: .75rem;
 }
