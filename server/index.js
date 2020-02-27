@@ -35,13 +35,13 @@ app.get('/auth/logout', logout);
 //BLOGS
 app.get('/api/blogs', getBlogs);
 app.post('/api/blogs', addBlog);
-app.delete(`/api/blogs:id`, deleteBlog);
+app.delete('/api/blogs/:id', deleteBlog);
 
 
 //BlOG COMMENTS
 app.get('/api/comments', getAllBlogComments);
 app.post('/api/comments',addCommentToBlog);
-app.delete('/api/commnets/:id', deleteComment);
+app.delete('/api/comments/:id', deleteComment);
 
 //BLOG and COMMENTS
 app.get('/api/get_blog_comments', getBlogsAndComments);

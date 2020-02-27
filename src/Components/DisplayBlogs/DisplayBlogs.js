@@ -3,8 +3,8 @@ import './DisplayBlogs.css'
 import Comments from '../Comments/Comments';
 
 class DisplayBlogs extends Component{
-constructor(){
-    super();
+constructor(props){
+    super(props);
     this.state = {
         toggleComment: false
     }
@@ -17,7 +17,7 @@ handleCommentToggle= () => {
     render(){
         console.log('My unique blog id: ', this.props.blogId)
         // console.log(this.props.title)
-        const {title, blog, date} =this.props
+        const {title, blog, date, blogId} =this.props
        
 
         const mappedComments = this.props.comments.map(comment => {
@@ -30,7 +30,7 @@ handleCommentToggle= () => {
         })
         return(
             <section className='displayBlogsCont'>
-              <div className='blogTitle'><h2>{title}<p className='date'>{date}</p></h2><button className='deleteBtn'/></div> 
+              <div className='blogTitle'><h2>{title}<p className='date'>{date}</p></h2><button className='deleteBtn' onClick={()=> this.props.deleteBlog(blogId)}/></div> 
                 <div className='blog'><p>{blog}</p></div> 
                 <div>
                 {!this.state.toggleComment?

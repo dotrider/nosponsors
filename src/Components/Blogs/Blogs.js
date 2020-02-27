@@ -51,8 +51,17 @@ class Blogs extends Component{
 }
 
 deleteBlog = (id) => {
-    axios.delete(`/api/commnets/${id}`)
-    this.getAllBlogs()
+    console.log('deleteBlog', id)
+    const {comments, blogs} = this.state
+    if(comments.blog_id === blogs.blog_id){
+        axios.delete(`/api/comments/${id}`)
+    }{
+    axios.delete(`/api/blogs/${id}`).then(res => {
+        this.setState({
+            blogs: res.data
+        })
+    })
+    }
 }
 
 ///COMMENTS TO BLOG SECTION///
@@ -75,7 +84,7 @@ postComment = async (comment) => {
 
 deleteComment = (id) => {
     console.log('deleteComment', id)
-    axios.delete(`/api/commnets/${id}`).then( res => {
+    axios.delete(`/api/comments/${id}`).then( res => {
         this.setState({
             comments: res.data
         })
@@ -144,7 +153,9 @@ console.log("POSTS!", this.state.blogs)
         comments={filteredComments}
         postComment={this.postComment}
         date={post.post_date}
-        deleteComment={this.deleteComment}/>
+        deleteComment={this.deleteComment}
+        deleteBlog={this.deleteBlog}/>
+        
     })
 
 
@@ -154,7 +165,7 @@ console.log("POSTS!", this.state.blogs)
             <div>        
                 {!this.state.toggleBlog?(<button className='composeBlogBtn' onClick={this.handleToggle}>Create Post</button>)
                 :
-                (<div> <PostBlog postBlog = {this.postBlog} toggle={this.handleToggle} deleteBlog={this.deleteBlog}/>  </div>)}               
+                (<div> <PostBlog postBlog = {this.postBlog} toggle={this.handleToggle}/>  </div>)}               
             </div>
 
         <section className='blogsAndComments'>          

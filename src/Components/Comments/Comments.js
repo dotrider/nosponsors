@@ -54,3 +54,4 @@ const {comment} = this.state
 }
 
 export default Comments
+
