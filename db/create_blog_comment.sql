@@ -1,7 +1,7 @@
 INSERT INTO blog_comments
-(comment, user_id, blog_id)
+(comment, user_id, blog_id, post_date)
 VALUES
-($1,$2,$3);
+($1,$2,$3,$4);
 -- returning *;
 
 SELECT * FROM blog_comments;

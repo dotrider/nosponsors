@@ -40,9 +40,10 @@ class Blogs extends Component{
      })
  }
 
- postBlog = (blog) => {
-     console.log(blog)
-    axios.post('/api/blogs', blog).then(res => {
+ postBlog = (obj) => {
+     console.log(obj)
+    //  const post_date = new Date(Date.now()).toISOString()
+    axios.post('/api/blogs', obj).then(res => {
        this.setState({
            blogs: res.data
        })
@@ -126,7 +127,8 @@ console.log("POSTS!", this.state.blogs)
         title={post.blog_title} 
         blog={post.blog} 
         comments={filteredComments}
-        postComment={this.postComment}/>
+        postComment={this.postComment}
+        date={post.post_date}/>
     })
 
 

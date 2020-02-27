@@ -23,11 +23,12 @@ handleChange = (e) => {
 
 addBlog = () => {
     const {blog_img, blog_title, blog} = this.state
-
+    const post_date = new Date(Date.now()).toISOString()
     let newBlog = {
         blog_img,
         blog_title,
         blog,
+        post_date
     }
    this.props.postBlog(newBlog)
    this.setState({
