@@ -18,17 +18,23 @@ handleCommentToggle= () => {
         console.log('My unique blog id: ', this.props.blogId)
         // console.log(this.props.title)
         const {title, blog, date} =this.props
+       
 
         const mappedComments = this.props.comments.map(comment => {
-        return <div className='commentCont'> <p className='font'>{comment.post_date}</p><div key={comment.id} className='commentsSec'> {comment.comment}</div></div>
+        return  <div className='commentCont'>
+                   <div className='meta'> <p className='font'>{comment.post_date} </p> 
+                    <button className='deleteBtn' onClick={() => this.props.deleteComment(comment.comment_id)}/> 
+                   </div>
+                    <div key={comment.id} className='commentsSec'> {comment.comment}</div>
+                </div>
         })
         return(
             <section className='displayBlogsCont'>
-              <div className='blogTitle'><h2>{title}<span className='date'>{date}</span></h2></div> 
+              <div className='blogTitle'><h2>{title}<p className='date'>{date}</p></h2><button className='deleteBtn'/></div> 
                 <div className='blog'><p>{blog}</p></div> 
                 <div>
                 {!this.state.toggleComment?
-                (<div className='replySect'><button onClick={this.handleCommentToggle} className='replyBtn'></button></div>)
+                (<div className='replySect'><button onClick={this.handleCommentToggle} className='replyBtn'/></div>)
                 :
                 (<div><Comments blogId={this.props.blogId} toggleComment={this.handleCommentToggle} postComment={this.props.postComment}/></div>)}
                 </div>

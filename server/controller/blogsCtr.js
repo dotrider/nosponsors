@@ -15,6 +15,14 @@ module.exports = {
         res.status(200).send(addblog)
     },
 
+    deleteBlog: async (req, res, next) => {
+        const db = req.app.get('db')
+        const {id} = req.params
+
+        const blog = await db.delete_blog(id)
+        res.status(200).send(blog)
+    },
+
     getBlogsAndComments: async (req, res, next) => {
         const db = req.app.get('db');
         const getBlogAndComments = await db.blog_and_comments()

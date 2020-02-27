@@ -50,6 +50,11 @@ class Blogs extends Component{
     })
 }
 
+deleteBlog = (id) => {
+    axios.delete(`/api/commnets/${id}`)
+    this.getAllBlogs()
+}
+
 ///COMMENTS TO BLOG SECTION///
 
 getAllComments = async () => {
@@ -66,6 +71,16 @@ postComment = async (comment) => {
             comments: res.data
         })
     }) 
+}
+
+deleteComment = (id) => {
+    console.log('deleteComment', id)
+    axios.delete(`/api/commnets/${id}`).then( res => {
+        this.setState({
+            comments: res.data
+        })
+    })
+       
 }
 
 // handleCommentClick = (comment, blog_id) => {
@@ -128,7 +143,8 @@ console.log("POSTS!", this.state.blogs)
         blog={post.blog} 
         comments={filteredComments}
         postComment={this.postComment}
-        date={post.post_date}/>
+        date={post.post_date}
+        deleteComment={this.deleteComment}/>
     })
 
 
@@ -138,7 +154,7 @@ console.log("POSTS!", this.state.blogs)
             <div>        
                 {!this.state.toggleBlog?(<button className='composeBlogBtn' onClick={this.handleToggle}>Create Post</button>)
                 :
-                (<div> <PostBlog postBlog = {this.postBlog} toggle={this.handleToggle}/> </div>)}               
+                (<div> <PostBlog postBlog = {this.postBlog} toggle={this.handleToggle} deleteBlog={this.deleteBlog}/>  </div>)}               
             </div>
 
         <section className='blogsAndComments'>          

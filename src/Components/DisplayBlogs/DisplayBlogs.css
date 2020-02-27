@@ -16,6 +16,8 @@
     font-size: larger;
     color: white;
     padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .blog {
@@ -38,6 +40,17 @@
     outline:none;
 }
 
+.deleteBtn {
+    background: url(../../image/buttons/iconfinder_v-30_3162615.svg) no-repeat top left;
+    background-size: contain;
+    height: 15px;
+    width: 15px;
+    border: none;
+    cursor: pointer;
+    outline:none;
+    display: inline-block;
+}
+
 .commentsSec {
     width: 90%;
     background-color: rgba(160, 155, 155, 0.137);
@@ -55,6 +68,17 @@
 
 }
 
+
 .font {
     font-size: .75rem;
+    display: inline;
+}
+
+.meta {
+    display: flex;
+    justify-content: space-between;
+}
+
+.date {
+    font-size: .65rem;
 }
