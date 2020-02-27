@@ -3,7 +3,7 @@ import axios from "axios";
 import './Login.css'
 import { connect } from "react-redux";
 import { setUser } from "../../redux/reducer";
-import Home from '../Home/Home'
+
 
 class Login extends Component {
   constructor() {
@@ -29,14 +29,14 @@ class Login extends Component {
     let body = { email, password };
     const res = await axios.post(`/auth/login`, body)
     this.props.setUser(res.data);
-    this.props.history.push('/blogs');
+    this.props.history.push('/forum');
   };
 
   register = async (username, email, password) => {
     let newUser = { username, email, password };
     const res = await axios.post(`/auth/register`, newUser);
     this.props.setUser(res.data);
-    this.props.history.push('/blogs');
+    this.props.history.push('/forum');
   };
 
  

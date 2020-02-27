@@ -1,13 +1,22 @@
 import React from 'react';
 import './Header.css';
+import {Link} from 'react-router-dom';
+import './Header.css'
+import logo from './../../image/logo/nosponsors.png'
 
 const Footer = () => {
 
     return(
         <header>
+            <div>
+            <Link to='/'> <img className='logo' src={logo}/></Link>
+            </div>
             <nav className='navBar'>
-                 <a>Home</a>
-                <a>About</a>
+                <ul className='links'>
+                   {/* <Link to='/'><li> Home </li></Link>  */}
+                    <Link to='/forum'><li> Forum </li></Link>
+                    <Link to='merch'><li> Merch </li></Link>
+                </ul>
             </nav>
         </header>
     )

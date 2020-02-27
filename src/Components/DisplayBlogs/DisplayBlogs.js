@@ -15,7 +15,7 @@ handleCommentToggle= () => {
     })
 }
     render(){
-        console.log('My unique blog id: ', this.props.blogId)
+        // console.log('My unique blog id: ', this.props.blogId)
         // console.log(this.props.title)
         const {title, blog, date, blogId} =this.props
        

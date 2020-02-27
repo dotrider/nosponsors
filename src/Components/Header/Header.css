@@ -1,15 +1,30 @@
 header {
     background-color: dodgerblue;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+
 }
-.navBar {
+.links {
   display: flex;
-  height: 100px;
-  width: 200px;
-  font-size: 1.8rem;
-  justify-content: space-around;
+  font-size: 1.5rem;
+  justify-content: space-evenly;
   align-items: center;
+  text-decoration: none;
 }
 
 a {
-    align-content: space-between;
+  text-decoration: none;
+  color: rgb(85, 84, 84);
+  padding: 10px;
+ 
 }
+
+a:hover {
+  color: white;
+}
+
+.logo {
+  height: 2.5em;
+}
+

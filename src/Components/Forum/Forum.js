@@ -5,7 +5,7 @@ import {getSession} from '../../redux/reducer';
 import PostBlog from '../PostBlog/PostBlog';
 import axios from 'axios';
 import DisplayBlogs from '../DisplayBlogs/DisplayBlogs';
-import './Blogs.css' 
+import './Forum.css' 
 
 
 
@@ -27,7 +27,7 @@ class Blogs extends Component{
     this.props.setUser()
     this.getAllBlogs()
     this.getAllComments()
-    console.log('ComponentDidMount', this.props)
+    // console.log('ComponentDidMount', this.props)
   
 }
  
@@ -83,7 +83,7 @@ postComment = async (comment) => {
 }
 
 deleteComment = (id) => {
-    console.log('deleteComment', id)
+    // console.log('deleteComment', id)
     axios.delete(`/api/comments/${id}`).then( res => {
         this.setState({
             comments: res.data
