@@ -29,13 +29,16 @@ getAllProducts = () => {
 
         let mappedProducts = this.state.products.map(product => {
             return <Products 
-            productName = {product.name}  
-            productImage = {product.product_img} 
-            productPrice={product.price}/>
+            productName={product.name}  
+            productImage={product.product_img} 
+            productPrice={product.price}
+            product_id={product.product_id}/>
         })
         return(
-            <section className='mainProducts'>
-               {mappedProducts}
+            <section>
+                <div className='mainProducts'>
+                {mappedProducts}
+                </div>
             </section>
         )
     }

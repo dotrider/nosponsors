@@ -84,7 +84,8 @@ profile_pic TEXT DEFAULT 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wC
 -- );
 
 -- create table cart (
--- cart_id serial primary KEY,
+-- id serial primary KEY,
+-- cart_id int,
 -- user_id integer,
 -- product_id integer,
 -- foreign key(user_id) references users(user_id),
