@@ -7,6 +7,7 @@ const {SERVER_PORT, SESSION_SECRET, CONNECTION_STR} = process.env;
 const {login, register, userSession, logout} = require('./controller/authCtr');
 const {getBlogs, addBlog, getBlogsAndComments, deleteBlog} = require('./controller/blogsCtr');
 const {getAllBlogComments, addCommentToBlog, deleteComment} = require('./controller/blogCmCtr')
+const {getProducts} = require('./controller/productsCtr')
 
 const app = express();
 app.use(express.json());
@@ -46,7 +47,8 @@ app.delete('/api/comments/:id', deleteComment);
 //BLOG and COMMENTS
 app.get('/api/get_blog_comments', getBlogsAndComments);
 
-
+//PRODUCTS
+app.get('/api/products', getProducts);
 
 
 

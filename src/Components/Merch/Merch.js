@@ -1,19 +1,45 @@
-import React,{Component} from 'react'
+import React,{Component} from 'react';
+import axios from 'axios';
+import Products from '../Products/Products';
 
 class Merch extends Component{
- constructor(){
-     super();
-     
- }
+    constructor(){
+        super();
+        this.state = {
+            products: []
+        }
+    }
 
-render(){
-    return( 
-        <div>
-            Merch
-        </div>
-    )
+
+componentDidMount(){
+    this.getAllProducts()
 }
 
+getAllProducts = () => {
+    axios.get('/api/products').then(res => {
+        console.log('products', res.data)
+        this.setState({
+            products: res.data
+        })
+    })
+}
+
+
+    render(){
+
+        let mappedProducts = this.state.products.map(product => {
+            return <Products 
+            productName = {product.name}  
+            productImage = {product.product_img} 
+            productPrice={product.price}/>
+        })
+        return(
+            <section className='mainProducts'>
+               {mappedProducts}
+            </section>
+        )
+    }
 }
 
 export default Merch
+

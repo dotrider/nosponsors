@@ -1,0 +1,17 @@
+.cartBtn {
+    background: url(../../image/buttons/iconfinder_meanicons_59_197222.svg) no-repeat top left;
+    background-size: contain;
+    height: 30px;
+    width: 30px;
+    border: none;
+    outline: none;
+}
+.productCont {
+    width: 25%;
+}
+
+
+.productImg {
+    width: 100%;
+    height: 100%;
+}

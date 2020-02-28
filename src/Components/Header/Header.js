@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import './Header.css'
 import logo from './../../image/logo/nosponsors.png'
 
-const Footer = () => {
+const Header = (props) => {
 
     return(
         <header>
@@ -16,10 +16,11 @@ const Footer = () => {
                    {/* <Link to='/'><li> Home </li></Link>  */}
                     <Link to='/forum'><li> Forum </li></Link>
                     <Link to='merch'><li> Merch </li></Link>
+                    {/* <button onClick={props.logout}>Logout</button> */}
                 </ul>
             </nav>
         </header>
     )
 }
 
-export default Footer
+export default Header

@@ -6,6 +6,7 @@ import PostBlog from '../PostBlog/PostBlog';
 import axios from 'axios';
 import DisplayBlogs from '../DisplayBlogs/DisplayBlogs';
 import './Forum.css' 
+import Header from '../Header/Header';
 
 
 
@@ -52,17 +53,17 @@ class Blogs extends Component{
 
 deleteBlog = (id) => {
     console.log('deleteBlog', id)
-    const {comments, blogs} = this.state
-    if(comments.blog_id === blogs.blog_id){
-        axios.delete(`/api/comments/${id}`)
-    }{
+    // const {comments, blogs} = this.state
+    // if(comments.blog_id === blogs.blog_id){
+    //     axios.delete(`/api/comments/${id}`)
+    // }{
     axios.delete(`/api/blogs/${id}`).then(res => {
         this.setState({
             blogs: res.data
         })
     })
-    }
 }
+
 
 ///COMMENTS TO BLOG SECTION///
 
@@ -160,7 +161,10 @@ console.log("POSTS!", this.state.blogs)
 
 
     return(
-        <section className='Mainblogs'>   
+       
+
+        <section className='Mainblogs'>  
+         {/* <Header logout={this.logout}/>  */}
             <button className='logoutBtn' onClick={this.logout}>Logout</button>
             <div>        
                 {!this.state.toggleBlog?(<button className='composeBlogBtn' onClick={this.handleToggle}>Create Post</button>)

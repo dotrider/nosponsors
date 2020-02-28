@@ -64,3 +64,29 @@ profile_pic TEXT DEFAULT 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wC
 -- user_id REFERENCES users(user_id),
 -- event_id REFERENCES events(event_id)  
 -- );
+
+--------------------------------------------------------
+--------------------------------------------------------
+
+-- CREATE TABLE products (
+--     product_id SERIAL PRIMARY KEY,
+--     name VARCHAR(50),
+--     price MONEY,
+--     product_img TEXT
+-- );
+
+-- SELECT * FROM products;
+
+-- CREATE TABLE cart(
+-- cart_id SERIAL PRIMARY KEY,
+-- product_id REFERENCES products(product_id),
+-- user_id REFERENCES users(user_id)
+-- );
+
+-- create table cart (
+-- cart_id serial primary KEY,
+-- user_id integer,
+-- product_id integer,
+-- foreign key(user_id) references users(user_id),
+-- foreign key (product_id) references products(product_id)
+-- );
