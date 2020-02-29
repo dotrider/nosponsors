@@ -95,3 +95,14 @@ profile_pic TEXT DEFAULT 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wC
 -- SELECT SUM(price) FROM  products
 -- INNER JOIN cart ON cart.product_id = products.product_id
 -- WHERE cart.cart_id = 4;
+
+
+-- create table cart (
+-- id serial primary KEY,
+-- cart_id int,
+-- user_id integer,
+-- product_id integer,
+-- quantity INT DEFAULT 1 ADDDDDDD
+-- foreign key(user_id) references users(user_id),
+-- foreign key (product_id) references products(product_id)
+-- );
