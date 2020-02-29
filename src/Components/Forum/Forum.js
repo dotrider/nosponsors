@@ -7,6 +7,7 @@ import axios from 'axios';
 import DisplayBlogs from '../DisplayBlogs/DisplayBlogs';
 import './Forum.css' 
 import Header from '../Header/Header';
+import moment from 'moment';
 
 
 
@@ -154,6 +155,7 @@ console.log("POSTS!", this.state.blogs)
         comments={filteredComments}
         postComment={this.postComment}
         date={post.post_date}
+        // date = {moment(post.date).format('lll')}
         deleteComment={this.deleteComment}
         deleteBlog={this.deleteBlog}/>
         

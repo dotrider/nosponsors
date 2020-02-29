@@ -1,3 +1,3 @@
-SELECT * FROM cart
-JOIN cart.product_id ON products.product_id
-WHERE cart.user_id = $1;
+SELECT * FROM  cart
+INNER JOIN products ON cart.product_id = products.product_id
+WHERE cart.cart_id = $1;
