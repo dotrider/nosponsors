@@ -77,20 +77,6 @@ profile_pic TEXT DEFAULT 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wC
 
 -- SELECT * FROM products;
 
--- CREATE TABLE cart(
--- cart_id SERIAL PRIMARY KEY,
--- product_id REFERENCES products(product_id),
--- user_id REFERENCES users(user_id)
--- );
-
--- create table cart (
--- id serial primary KEY,
--- cart_id int,
--- user_id integer,
--- product_id integer,
--- foreign key(user_id) references users(user_id),
--- foreign key (product_id) references products(product_id)
--- );
 
 -- SELECT SUM(price) FROM  products
 -- INNER JOIN cart ON cart.product_id = products.product_id
@@ -102,7 +88,35 @@ profile_pic TEXT DEFAULT 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wC
 -- cart_id int,
 -- user_id integer,
 -- product_id integer,
--- quantity INT DEFAULT 1 ADDDDDDD
 -- foreign key(user_id) references users(user_id),
 -- foreign key (product_id) references products(product_id)
 -- );
+
+-- INSERT INTO cart
+-- (cart_id, product_id, user_id)
+-- VALUES
+-- ($1, $2, $3);
+
+-- SELECT * FROM cart
+-- WHERE cart_id = $1;
+
+
+
+
+--------------------------------------------------------
+--2-29-20-- CHANGES TO DB CART TABLE/ ADDED QTY COLUMN
+--------------------------------------------------------
+--CHANGE 1
+-- ALTER TABLE cart
+-- ADD quantity INT DEFAULT 1;
+
+---CHANGE 2 UPDATED add_to_cart.slq--
+-- INSERT INTO cart
+-- (cart_id, product_id, user_id, quantity)
+-- VALUES
+-- ($1, $2, $3, $4);
+
+-- SELECT * FROM cart
+-- WHERE cart_id = $1;
+
+--CHANGE 3

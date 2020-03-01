@@ -13,7 +13,7 @@ class Login extends Component {
       email: "",
       password: "",
       register: false,
-      loginStatus: false,
+      login: false,
     };
   }
 
@@ -24,19 +24,34 @@ class Login extends Component {
     });
   };
 
-  login = async (email, password) => {
+  // login = async (email, password) => {
+  //   console.log('login',this.props.user)
+  //   let body = { email, password };
+  //   const res = await axios.post(`/auth/login`, body)
+  //   this.props.setUser(res.data);
+  //   this.props.history.push('/forum')
+  // };
+  
+  login = (email, password) => {
     console.log('login',this.props.user)
     let body = { email, password };
-    const res = await axios.post(`/auth/login`, body)
-    this.props.setUser(res.data);
-    this.props.history.push('/forum');
-  };
+    axios.post(`/auth/login`, body).then(res => {
+      this.props.setUser(res.data);
+    this.props.history.push('/forum')
+    }).catch(err => {
+        this.setState({
+          login: true
+        })
+      });
+  }
+
+
 
   register = async (username, email, password) => {
     let newUser = { username, email, password };
     const res = await axios.post(`/auth/register`, newUser);
     this.props.setUser(res.data);
-    this.props.history.push('/forum');
+    this.props.history.push('/forum')
   };
 
  
@@ -75,7 +90,10 @@ class Login extends Component {
               <br/>
               <button className='btn' onClick={() => this.setState({ register: true})}> Sign up</button>
             </form>  
-           
+           {this.state.login?
+           <p>Incorrect email or password</p>
+          :
+          <p></p>}
           </div>
         ) : (
           <div>
