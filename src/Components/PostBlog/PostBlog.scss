@@ -1,6 +1,8 @@
+@import '../../style/variables/variables.scss';
+
 .composeBlog {
     width: 50%;
-    background-color: rgba(29, 25, 25, 0.137);
+    background-color: $containerBg;
     border-radius: 5px;
     margin: 25px auto;
     padding: 15px;

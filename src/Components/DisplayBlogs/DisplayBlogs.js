@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import './DisplayBlogs.css'
+import './DisplayBlogs.scss'
 import Comments from '../Comments/Comments';
 
 class DisplayBlogs extends Component{

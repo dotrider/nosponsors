@@ -5,8 +5,7 @@ import {getSession} from '../../redux/reducer';
 import PostBlog from '../PostBlog/PostBlog';
 import axios from 'axios';
 import DisplayBlogs from '../DisplayBlogs/DisplayBlogs';
-import './Forum.css' 
-import Header from '../Header/Header';
+import './Forum.scss' 
 import moment from 'moment';
 
 

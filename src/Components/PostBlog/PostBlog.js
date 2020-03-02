@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import './PostBlog.css';
+import './PostBlog.scss';
 
 
 

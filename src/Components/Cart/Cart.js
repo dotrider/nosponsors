@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-
+import axios from 'axios';
 
 class Cart extends Component{
     constructor(){
@@ -9,10 +9,13 @@ class Cart extends Component{
         }
     }
 
+
+    
+
     render(){
         return(
             <section>
-                CART
+                Cart
             </section>
         )
     }

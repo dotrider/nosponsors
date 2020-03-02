@@ -53,6 +53,7 @@ app.get('/api/products', getProducts);
 
 //CART
 app.post('/api/cart/:id', addToCart);
+// app.get('/api/cart', addToCart);
 
 
 

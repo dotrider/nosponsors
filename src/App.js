@@ -1,7 +1,7 @@
 import React from 'react';
 // import './App.css';
-import './reset.css'
-import './App2.css'
+import './style/reset.scss'
+import './style/App2.scss'
 import Header from './Components/Header/Header';
 import {Switch, Route} from 'react-router-dom'
 import Forum from './Components/Forum/Forum'

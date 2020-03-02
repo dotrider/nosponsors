@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import './Login.css'
+import './Login.scss'
 import { connect } from "react-redux";
 import { setUser } from "../../redux/reducer";
 
@@ -45,7 +45,18 @@ class Login extends Component {
       });
   }
 
-
+// register = (username, email, password) => {
+// let newUser = {username, email, password};
+//   axios.post(`/auth/register`, newUser).then(res => {
+//     this.props.setUser(res.data);
+//     this.props.history.push(`/forum`)
+//   }).catch(err => {
+//     this.setState({
+//       register: true
+//     })
+//   });
+ 
+// }
 
   register = async (username, email, password) => {
     let newUser = { username, email, password };
@@ -127,6 +138,7 @@ class Login extends Component {
               <br/>
               <button className='btn' type="submit" >Register</button> 
             </form>
+       
             <br/>
             <h4>Already have an account</h4>
             <button className='btn'

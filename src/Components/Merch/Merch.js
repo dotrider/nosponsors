@@ -1,6 +1,8 @@
 import React,{Component} from 'react';
 import axios from 'axios';
 import Products from '../Products/Products';
+import {FiShoppingCart} from 'react-icons/fi';
+import './Merch.scss'
 
 class Merch extends Component{
     constructor(){
@@ -36,6 +38,9 @@ getAllProducts = () => {
         })
         return(
             <section>
+                <div className='cartIcon'>
+                    <FiShoppingCart className='cart' />
+                </div>
                 <div className='mainProducts'>
                 {mappedProducts}
                 </div>

@@ -8,10 +8,19 @@
 }
 .productCont {
     width: 25%;
+    display: flex;
+}
+
+.productCard {
+    width: 200px;
 }
 
 
 .productImg {
     width: 100%;
     height: 100%;
+}
+
+.productInfo {
+    margin: 0 auto;
 }
