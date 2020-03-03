@@ -1,17 +1,20 @@
 import React,{Component} from 'react';
 import axios from 'axios';
+import './Cart.scss';
 
 class Cart extends Component{
     constructor(){
         super();
         this.state = {
             cart: []
+
         }
     }
 
     componentDidMount(){
         console.log('C.D.M.Cart', this.getCart)
         this.getCart()
+
     }
 
     getCart = () => {
@@ -23,23 +26,29 @@ class Cart extends Component{
         })
     }
 
-    // decreaseQty = (e) => {
-    //     let product_id = e.target.value
-    //     axios.post(`/api/cart/${product_id}`).then(res => {
-    //         this.setState({
-    //             cart: res.data
-    //         })
-    //     })
-    // }
+ 
+
+    decreaseQty = (e) => {
+        axios.post(`/api/carts/${e.target.value}`).then(res => {
+            this.setState({
+                cart: res.data
+            })
+        })
+    }
 
 
     render(){
-        const {product_id} =this.props
+
+
         const mappedCart = this.state.cart.map(cart => {
-            return <div>
+            return <div key={Cart.id}>
+             <img className='cartProductImg' src={cart.product_img}/>  
             <p>Product: {cart.name}</p>
-            <p>Quantity: {cart.quantity}</p>
-            <button onClick={this.decreaseQty} value={product_id} className='cartBtn'/>
+            <p>Price: {cart.price}</p>
+            <p>Quantity: {cart.quantity}</p> 
+            {/* <p>Total: {cart.sum}</p> */}
+            {/* <p>Total: {cart.sum}</p> */}
+            <button onClick={this.decreaseQty} value={cart.product_id}/>
             </div> 
         })
         return(

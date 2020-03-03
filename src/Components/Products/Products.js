@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import './Products.scss';
 import axios from 'axios';
 
+import Cart from '../Cart/Cart';
 
 
 class Products extends Component{
@@ -25,6 +26,7 @@ addToCart = (e) => {
    render(){
    
     const {productName, productImage, productPrice, product_id} = this.props
+
        return( 
            <section className='productCont'>
                <div className='productCard'>
@@ -33,7 +35,7 @@ addToCart = (e) => {
             <h2>{productName}</h2>
              <p>{productPrice}</p>
              </div>
-             <div><button onClick={this.addToCart} value={product_id} className='cartBtn'/></div>
+             <div><button onClick={this.addToCart} value={product_id} className='cartBtn'>-</button></div>
              </div>
            </section>
        )

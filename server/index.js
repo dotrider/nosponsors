@@ -46,16 +46,15 @@ app.post('/api/comments',addCommentToBlog);
 app.delete('/api/comments/:id', deleteComment);
 
 //BLOG and COMMENTS
-app.get('/api/get_blog_comments', getBlogsAndComments);
+// app.get('/api/get_blog_comments', getBlogsAndComments);
 
 //PRODUCTS
 app.get('/api/products', getProducts);
 
 //CART
 app.post('/api/cart/:id', addToCart);
-// app.post('/api/cart/:id', decreaseQty);
+app.post('/api/carts/:id', decreaseQty);
 app.get('/api/cart', getCart);
-// app.get('/api/cart', addToCart);
 
 
 

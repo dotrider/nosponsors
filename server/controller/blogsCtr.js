@@ -21,12 +21,12 @@ module.exports = {
 
         const blog = await db.delete_blog(id)
         res.status(200).send(blog)
-    },
+    }
 
-    getBlogsAndComments: async (req, res, next) => {
-        const db = req.app.get('db');
-        const getBlogAndComments = await db.blog_and_comments()
-        res.status(200).send(getBlogAndComments)
-    },
+    // getBlogsAndComments: async (req, res, next) => {
+    //     const db = req.app.get('db');
+    //     const getBlogAndComments = await db.blog_and_comments()
+    //     res.status(200).send(getBlogAndComments)
+    // },
 
 }

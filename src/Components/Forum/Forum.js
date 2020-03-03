@@ -140,8 +140,8 @@ render(){
     // })
 
 //////////////////
-console.log("COMMENTS!", this.state.comments)
-console.log("POSTS!", this.state.blogs)
+// console.log("COMMENTS!", this.state.comments)
+// console.log("POSTS!", this.state.blogs)
     const mappedblogs = this.state.blogs.map(post => {
         const filteredComments = this.state.comments.filter(comment => {
             return comment.blog_id === post.blog_id
