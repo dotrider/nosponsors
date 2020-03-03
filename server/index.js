@@ -8,7 +8,7 @@ const {login, register, userSession, logout} = require('./controller/authCtr');
 const {getBlogs, addBlog, getBlogsAndComments, deleteBlog} = require('./controller/blogsCtr');
 const {getAllBlogComments, addCommentToBlog, deleteComment} = require('./controller/blogCmCtr')
 const {getProducts} = require('./controller/productsCtr')
-const {addToCart} = require('./controller/cartCtr')
+const {addToCart, decreaseQty, getCart} = require('./controller/cartCtr')
 
 const app = express();
 app.use(express.json());
@@ -53,6 +53,8 @@ app.get('/api/products', getProducts);
 
 //CART
 app.post('/api/cart/:id', addToCart);
+// app.post('/api/cart/:id', decreaseQty);
+app.get('/api/cart', getCart);
 // app.get('/api/cart', addToCart);
 
 

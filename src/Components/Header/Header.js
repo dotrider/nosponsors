@@ -15,6 +15,7 @@ const Header = (props) => {
                    {/* <Link to='/'><li> Home </li></Link>  */}
                     <Link to='/forum'><li> Forum </li></Link>
                     <Link to='merch'><li> Merch </li></Link>
+                    <Link to='cart'><li> Cart </li></Link>
                     {/* <button onClick={props.logout}>Logout</button> */}
                 </ul>
             </nav>

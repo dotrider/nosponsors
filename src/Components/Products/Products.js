@@ -13,7 +13,7 @@ class Products extends Component{
 addToCart = (e) => {
     // console.log('add cart',this.addToCart)
     const product_id = e.target.value
-    console.log('e.t.v', e.target.value)
+    // console.log('e.t.v', e.target.value)
     axios.post(`/api/cart/${product_id}`).then(res => {
         console.log('checkCart front end',res)
     }).catch(err => {
