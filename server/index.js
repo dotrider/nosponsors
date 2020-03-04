@@ -2,13 +2,15 @@ require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
 const massive = require('massive');
+// const stripe = require('stripe')(SKEY);//Working on stripe
 
-const {SERVER_PORT, SESSION_SECRET, CONNECTION_STR} = process.env;
+const {SERVER_PORT, SESSION_SECRET, CONNECTION_STR, SKEY} = process.env;
 const {login, register, userSession, logout} = require('./controller/authCtr');
-const {getBlogs, addBlog, getBlogsAndComments, deleteBlog} = require('./controller/blogsCtr');
+const {getBlogs, addBlog, getBlogsAndComents, deleteBlog} = require('./controller/blogsCtr');
 const {getAllBlogComments, addCommentToBlog, deleteComment} = require('./controller/blogCmCtr')
 const {getProducts} = require('./controller/productsCtr')
 const {addToCart, decreaseQty, getCart} = require('./controller/cartCtr')
+const {checkOut} = require ('./controller/checkoutCtr')//Working on Checkout
 
 const app = express();
 app.use(express.json());
@@ -55,6 +57,9 @@ app.get('/api/products', getProducts);
 app.post('/api/cart/:id', addToCart);
 app.post('/api/carts/:id', decreaseQty);
 app.get('/api/cart', getCart);
+
+//CHECKOUT
+app.post('/api/cart/checkout', checkOut);//Working on checkout
 
 
 

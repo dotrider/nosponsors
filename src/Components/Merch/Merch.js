@@ -41,7 +41,7 @@ getAllProducts = () => {
                 <div className='cartIcon'>
                     <FiShoppingCart size="30px" id='cart' />
                 </div>
-                <div className='mainProducts'>
+                <div className='productContainer'>
                 {mappedProducts}
                 </div>
             </section>

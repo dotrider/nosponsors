@@ -1,6 +1,8 @@
 import React,{Component} from 'react';
 import axios from 'axios';
 import './Cart.scss';
+import StripeCheckout from 'react-stripe-checkout'
+
 
 class Cart extends Component{
     constructor(){
@@ -36,9 +38,12 @@ class Cart extends Component{
         })
     }
 
-
+    
     render(){
 
+        function handleToken(token, addresses){
+            console.log({token, addresses})
+            }
 
         const mappedCart = this.state.cart.map(cart => {
             return <div key={Cart.id}>
@@ -54,6 +59,15 @@ class Cart extends Component{
         return(
             <section>
                 {mappedCart} 
+                <div>{/*working on checkout/Stripe*/}
+                <StripeCheckout
+                    stripeKey='pk_test_52pNzyxRFrzjtCyGvyiEkrmc00kviWNBzl'
+                    token={handleToken}
+                    billingAddress
+                    shippingAddress
+                    ammount={1.00}
+            />
+                </div>
             </section>
         )
     }

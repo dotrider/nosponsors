@@ -24,8 +24,8 @@ class Blogs extends Component{
 
  componentDidMount(){
     // From my join table - blog and comments => this.getBlogsAndComments()
-    this.props.getSession()
-    this.props.setUser()
+    // this.props.getSession()
+    // this.props.setUser()
     this.getAllBlogs()
     this.getAllComments()
     // console.log('ComponentDidMount', this.props)
@@ -36,6 +36,7 @@ class Blogs extends Component{
  getAllBlogs = async () => {
      const blogs = await axios.get(`/api/blogs`)
      console.log('blogs',blogs.data)
+     console.log('postblog', blogs.data)
      this.setState({
          blogs: blogs.data
      })
@@ -45,6 +46,7 @@ class Blogs extends Component{
      console.log(newBlog)
     //  const post_date = new Date(Date.now()).toISOString()
     axios.post('/api/blogs', newBlog).then(res => {
+
        this.setState({
            blogs: res.data
        })
@@ -129,6 +131,8 @@ handleToggle =()=> {
 
 
 render(){
+
+    console.log('forum', this.props.user)
     //From my join table - blog and comments
     // const mappedComments = this.state.blogAndComments.map(post => {
     //     return <DisplayBlogs key={post.id} title={post.blog_title} blog={post.blog} postComment={this.postComment}/>})
@@ -142,10 +146,12 @@ render(){
 //////////////////
 // console.log("COMMENTS!", this.state.comments)
 // console.log("POSTS!", this.state.blogs)
+
     const mappedblogs = this.state.blogs.map(post => {
         const filteredComments = this.state.comments.filter(comment => {
             return comment.blog_id === post.blog_id
         })
+        console.log('mjs', post.post_date)
         return <DisplayBlogs 
         key={post.id} 
         blogId={post.blog_id} 
@@ -153,10 +159,14 @@ render(){
         blog={post.blog} 
         comments={filteredComments}
         postComment={this.postComment}
-        date={post.post_date}
-        // date = {moment(post.date).format('lll')}
+        // date={post.post_date}
+        date = {moment(post.post_date).format('lll')}
         deleteComment={this.deleteComment}
-        deleteBlog={this.deleteBlog}/>
+        deleteBlog={this.deleteBlog}
+        username={post.username}
+        userId = {post.user_id}
+        user={this.props.user.user_id}
+        />
         
     })
 
