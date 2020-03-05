@@ -41,28 +41,30 @@ hideMenu= () => {
 
         const mappedComments = this.props.comments.map(comment => {
         return  <div className='commentCont'>
-                   <div className='meta'> <p className='commentDate'>{moment(comment.post_date).format('lll')} {this.props.username}</p> 
-        {user !== comment.user_id? null : <button className='deleteBtn' onClick={() => this.props.deleteComment(comment.comment_id)}/>} 
-                   </div>
-                    <div key={comment.id} className='commentsSec'> {comment.comment}</div>
+                <div className='meta'> <p className='commentDate'>{moment(comment.post_date).format('lll')} {this.props.username}</p> 
+                {user !== comment.user_id? null : <button className='deleteBtn' onClick={() => this.props.deleteComment(comment.comment_id)}/>} 
                 </div>
+                <div key={comment.id} className='commentsSec'> {comment.comment}</div>
+         </div>
         })
         return(
             <section className='forum-grid'>     
-                <div className='userInfo'> UserINFO</div>
+                <div className='userInfo'> 
+                    <div className='profilePic'><img></img></div>
+                   <p className='userData'>USERNAME</p> 
+                   <p className='userData'>Date Joinned:</p> 
+                </div>
                  <div className='blogTitle'><h2>{title}{username}<p className='date'>{date}</p></h2><div>{user !== userId? null : <button className='menuBtn' onClick={this.toggleMenu}/>} 
-                {this.state.displayMenu ?  <button className='deleteBtn'onClick={()=> this.props.deleteBlog(blogId)}/>   : '' }
+                {this.state.displayMenu ?  <button className='deleteBtn dltBlogBtn'onClick={()=> this.props.deleteBlog(blogId)}/>   : '' }
                   </div>
                  </div> 
-          
- 
                 <div className='blog'><p>{blog}</p></div> 
-                <div>
+               
                 {!this.state.toggleComment?
                 (<div className='replySect'><button onClick={this.handleCommentToggle} className='replyBtn'/></div>)
                 :
                 (<div className='comments'><Comments blogId={this.props.blogId} toggleComment={this.handleCommentToggle} postComment={this.props.postComment}/></div>)}
-                </div>
+        
                 <div className = 'commentsC'>
                  {mappedComments} 
                 </div>

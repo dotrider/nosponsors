@@ -8,20 +8,17 @@
     padding: 15px;
 }
 
-.blogContent {
-    outline: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 5px;    
-}
+
 
 .postInput {
-    width: 100%;
+    width: 90%;
+    height: 15px;
 }
 
 .blogPost {
-    height: 35px
+    height: 25px;
+    width: 90%;
+
 }
 
 .submitBtn {
@@ -33,13 +30,13 @@ input {
 }
 
 .cancelCont {
-    height: 25px;  
+    height: 20px;  
 }
 .cancelBtn {
     background: url(../../image/buttons/iconfinder_Close_1031533.svg) no-repeat top left ;
     background-size: contain;
-    height: 25px;
-    width: 25px;
+    height: 20px;
+    width: 20px;
     border: none;
     cursor: pointer;
     outline:none;

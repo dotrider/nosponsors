@@ -90,7 +90,7 @@
     grid-template-columns: 150px 230px 230px;
     width: 60%;
     grid-auto-rows: minmax(20px, auto);
-    background-color: rgba(0, 255, 123, 0.137);
+    background-color: rgba(0, 221, 255, 0.292);
     border-radius: 8px;
     justify-content: center;
     // margin: 15px;
@@ -99,7 +99,7 @@
 .userInfo {
     grid-column: 1;
     grid-row: 1/6;
-    background-color: rgb(75, 90, 59);
+    background-color: rgb(92, 194, 162);
     padding: 10px;
 
 
@@ -129,6 +129,10 @@
     height: 25px;
 }
 
+.comments {
+    grid-column: 2/4;
+    background-color: rgba(160, 155, 155, 0.137);
+}
 
 .commentsC{
     grid-column: 2/4;
@@ -140,6 +144,7 @@
 
 .commentCont {
     box-shadow: 2px 2px 5px 0 rgba(42, 41, 41, 0.281);
+    padding: 5px 0;
   
 }
 
@@ -168,6 +173,12 @@
     border: none;
     cursor: pointer;
     outline:none;
+}
+
+
+.dltBlogBtn {
+    vertical-align: top;
+    margin-top: 12px;
 
 }
 
@@ -189,4 +200,17 @@
     border: none;
     cursor: pointer;
     outline:none;
+}
+
+.profilePic {
+    width: 90px;
+    height: 90px;
+    background-color: gray;
+    margin: 0 auto;
+    margin: 20px 20px;
+}
+
+.userData {
+   text-align: center;
+   line-height: 1.5em;
 }

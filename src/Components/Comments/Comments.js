@@ -39,14 +39,13 @@ render(){
 const {comment} = this.state
     return(
   
-        <section className='composeComment'>   
-                <div className='commentCont'>
-                <input className='commentInput' value={comment} name='comment' placeholder='comment here' onChange={this.handleChange}/>
-                <input className='submitBtn ' onClick={this.addComment} type='submit' value="add" />
-                </div>
-                <div> 
-                <button className='cancelBtn' onClick={this.props.toggleComment}/>
-                </div>
+        <section className='composeComment'>                 
+            <input className='commentInput' value={comment} name='comment' placeholder='comment here' onChange={this.handleChange}/>
+            <input className='submitBtn ' onClick={this.addComment} type='submit' value="add" />
+           
+            <div> 
+            <button className='cancelBtn' onClick={this.props.toggleComment}/>
+            </div>
         </section>         
     )
 }
