@@ -1,33 +1,174 @@
 
 
-.displayBlogsCont {
-    width: 50%;
+// .displayBlogsCont {
+//     width: 50%;
+//     background-color: rgba(0, 255, 123, 0.137);
+//     border-radius: 5px;
+//     margin: 25px auto;
+//     box-shadow: 2px 2px 5px 0 rgba(42, 41, 41, 0.281);
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: flex-start;
+//     padding: 15px;
+// }
+
+// .blogTitle {
+//     font-size: larger;
+//     color: white;
+//     padding-bottom: 10px;
+//     display: flex;
+//     justify-content: space-between;
+// }
+
+// .blog {
+//     width: 95%;
+//     min-height: 30px;
+//     padding: 5px;
+// }
+
+// .replySect {
+//     height: 25px;
+// }
+
+// .replyBtn {
+//     background: url(../../image/buttons/iconfinder_Pinterest_UI-13_2540585.svg) no-repeat top left ;
+//     background-size: contain;
+//     height: 40px;
+//     width: 40px;
+//     border: none;
+//     cursor: pointer;
+//     outline:none;
+// }
+
+// .deleteBtn {
+//     background: url(../../image/buttons/iconfinder_v-30_3162615.svg) no-repeat top left;
+//     background-size: contain;
+//     height: 15px;
+//     width: 15px;
+//     border: none;
+//     cursor: pointer;
+//     outline:none;
+
+// }
+
+// .commentsSec {
+//     width: 90%;
+//     background-color: rgba(160, 155, 155, 0.137);
+//     border-radius: 5px;
+//     margin: 15px auto 0;
+//     box-shadow: 2px 2px 5px 0 rgba(42, 41, 41, 0.281);
+//     padding: 10px;
+//     color:rgb(255, 251, 250);
+// }
+// .commentCont{
+//     width: 85%;
+//     background-color: rgba(160, 155, 155, 0.137);
+//     border-radius: 5px;
+//     margin: 15px auto 0;
+//     box-shadow: 2px 2px 5px 0 rgba(42, 41, 41, 0.281);
+// }
+
+
+// .font {
+//     font-size: .75rem;
+//     display: inline;
+// }
+
+// .meta {
+//     display: flex;
+//     justify-content: space-between;
+// }
+
+// .date {
+//     font-size: .85rem;
+// }
+
+////////
+
+.forum-grid {
+    display: grid;
+    grid-template-columns: 150px 230px 230px;
+    width: 60%;
+    grid-auto-rows: minmax(20px, auto);
     background-color: rgba(0, 255, 123, 0.137);
-    border-radius: 5px;
-    margin: 25px auto;
-    box-shadow: 2px 2px 5px 0 rgba(42, 41, 41, 0.281);
-    flex-direction: column;
+    border-radius: 8px;
     justify-content: center;
-    align-items: flex-start;
-    padding: 15px;
+    // margin: 15px;
+    margin: 50px auto 0;
+}
+.userInfo {
+    grid-column: 1;
+    grid-row: 1/6;
+    background-color: rgb(75, 90, 59);
+    padding: 10px;
+
+
 }
 
 .blogTitle {
+    grid-column: 2 / 4;
+    grid-row: 1;
+    padding: 10px;
     font-size: larger;
     color: white;
-    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.blog {
+    grid-column: 2 / 4;
+    grid-row:2/3;
+    padding: 10px;
+    box-shadow: 2px 2px 5px 0 rgba(42, 41, 41, 0.281);
+    height: 40px;
+
+}
+.replySect {
+  
+    height: 25px;
+}
+
+
+.commentsC{
+    grid-column: 2/4;
+    grid-row:5/6;
+    padding: 10px 10px;
+    background-color: rgba(160, 155, 155, 0.137);
+
+}
+
+.commentCont {
+    box-shadow: 2px 2px 5px 0 rgba(42, 41, 41, 0.281);
+  
+}
+
+.date {
+    font-size: .85rem;
+}
+
+.meta {
     display: flex;
     justify-content: space-between;
 }
 
-.blog {
-    width: 95%;
-    min-height: 30px;
-    padding: 5px;
+.commentDate {
+    font-size: .75rem;
+    padding-bottom: 10px;
+    color: white;
 }
 
-.replySect {
-    height: 25px;
+///Buttons
+
+.deleteBtn {
+    background: url(../../image/buttons/iconfinder_v-30_3162615.svg) no-repeat top left;
+    background-size: contain;
+    height: 15px;
+    width: 15px;
+    border: none;
+    cursor: pointer;
+    outline:none;
+
 }
 
 .replyBtn {
@@ -40,45 +181,21 @@
     outline:none;
 }
 
-.deleteBtn {
-    background: url(../../image/buttons/iconfinder_v-30_3162615.svg) no-repeat top left;
+.menuBtn {
+    background: url(../../image/buttons/iconfinder_User_Interface-26_2044262.svg) no-repeat top left ;
     background-size: contain;
-    height: 15px;
-    width: 15px;
+    height: 40px;
+    width: 40px;
     border: none;
     cursor: pointer;
     outline:none;
-    display: inline-block;
 }
-
-.commentsSec {
-    width: 90%;
-    background-color: rgba(160, 155, 155, 0.137);
-    border-radius: 5px;
-    margin: 15px auto 0;
-    box-shadow: 2px 2px 5px 0 rgba(42, 41, 41, 0.281);
-    padding: 10px;
-    color:rgb(255, 251, 250);
-}
-.commentCont{
-    width: 85%;
-    background-color: rgba(160, 155, 155, 0.137);
-    border-radius: 5px;
-    margin: 15px auto 0;
-    box-shadow: 2px 2px 5px 0 rgba(42, 41, 41, 0.281);
-}
-
-
-.font {
-    font-size: .75rem;
-    display: inline;
-}
-
-.meta {
-    display: flex;
-    justify-content: space-between;
-}
-
-.date {
-    font-size: .65rem;
+.blogMenu{
+display: none;
+  position: absolute;
+  width: 100px;
+  right: 120px;
+  flex-direction: column;
+//   padding: 10px 10px 0px 10px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 0 2px 0 rgba(0, 0, 0, 0.14);
 }

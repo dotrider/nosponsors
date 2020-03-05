@@ -10,11 +10,25 @@ profile_pic TEXT DEFAULT 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wC
 
 -- CREATE TABLE blogs(
 -- blog_id SERIAL PRIMARY KEY,
--- blog_title VARCHAR(50),
--- blog_img TEXT,
 -- blog TEXT,
 -- user_id REFERENCES users(user_id),
+-- blog_title VARCHAR(50),
+-- blog_img TEXT,
+-- post_date TIMESTAMP(0),
+-- username REFERENCES users(username)
 --  );
+
+-- CREATE TABLE blogs(
+-- blog_id SERIAL PRIMARY KEY,
+-- blog TEXT,
+-- user_id INT,
+-- blog_title VARCHAR(50),
+-- blog_img TEXT,
+-- post_date TIMESTAMP(0) NOT NULL,
+-- username TEXT,
+-- FOREIGN KEY (user_id) REFERENCES users(user_id),
+-- FOREIGN KEY (username) REFERENCES users(username)
+-- );
 
 -- --POST BLOG
 
@@ -101,7 +115,7 @@ profile_pic TEXT DEFAULT 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wC
 -- WHERE cart_id = $1;
 
 
-
+-----
 
 --------------------------------------------------------
 --2-29-20-- CHANGES TO DB CART TABLE/ ADDED QTY COLUMN
