@@ -35,15 +35,15 @@ class Blogs extends Component{
 ///BLOG SECTION///
  getAllBlogs = async () => {
      const blogs = await axios.get(`/api/blogs`)
-     console.log('blogs',blogs.data)
-     console.log('postblog', blogs.data)
+    //  console.log('blogs',blogs.data)
+    //  console.log('postblog', blogs.data)
      this.setState({
          blogs: blogs.data
      })
  }
 
  postBlog = (newBlog) => {
-     console.log(newBlog)
+    //  console.log(newBlog)
     //  const post_date = new Date(Date.now()).toISOString()
     axios.post('/api/blogs', newBlog).then(res => {
 
@@ -54,7 +54,7 @@ class Blogs extends Component{
 }
 
 deleteBlog = (id) => {
-    console.log('deleteBlog', id)
+    // console.log('deleteBlog', id)
     // const {comments, blogs} = this.state
     // if(comments.blog_id === blogs.blog_id){
     //     axios.delete(`/api/comments/${id}`)
@@ -71,7 +71,7 @@ deleteBlog = (id) => {
 
 getAllComments = async () => {
     const comments = await axios.get('/api/comments')
-    console.log(`comment`,comments)
+    // console.log(`comment`,comments)
     this.setState({
         comments: comments.data
     })
@@ -132,7 +132,7 @@ handleToggle =()=> {
 
 render(){
 
-    console.log('forum', this.props.user)
+    console.log('userSession on redux', this.props.user)
     //From my join table - blog and comments
     // const mappedComments = this.state.blogAndComments.map(post => {
     //     return <DisplayBlogs key={post.id} title={post.blog_title} blog={post.blog} postComment={this.postComment}/>})
@@ -151,7 +151,8 @@ render(){
         const filteredComments = this.state.comments.filter(comment => {
             return comment.blog_id === post.blog_id
         })
-        console.log('mjs', post.post_date)
+        // console.log('mjs', post.post_date)
+        // console.log('username!', post.user_id.username)
         return <DisplayBlogs 
         key={post.id} 
         blogId={post.blog_id} 
@@ -163,7 +164,8 @@ render(){
         date = {moment(post.post_date).format('lll')}
         deleteComment={this.deleteComment}
         deleteBlog={this.deleteBlog}
-        username={post.username}
+        // username={this.props.user.username}//for user session
+        username={post.user_id.username}
         userId = {post.user_id}
         user={this.props.user.user_id}
         />
@@ -176,9 +178,12 @@ render(){
 
         <section className='Mainblogs'>  
          {/* <Header logout={this.logout}/>  */}
+         <div className='subHeading'>
+         <h2>Hello, <span className='userNameSub'>{this.props.user.username}</span></h2>
             <button className='logoutBtn' onClick={this.logout}>Logout</button>
+            </div>
             <div>        
-                {!this.state.toggleBlog?(<button className='composeBlogBtn' onClick={this.handleToggle}>Create Post</button>)
+                {!this.state.toggleBlog?(<div className='postBtnContainer'><button className='composeBlogBtn' onClick={this.handleToggle}>Create Post</button></div>)
                 :
                 (<div> <PostBlog postBlog = {this.postBlog} toggle={this.handleToggle}/>  </div>)}               
             </div>

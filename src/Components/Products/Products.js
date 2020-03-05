@@ -27,15 +27,19 @@ addToCart = (e) => {
    
     const {productName, productImage, productPrice, product_id} = this.props
 
-       return( 
-            <div className='productCard'>
-               <div><img className='productImg' src={productImage}/></div>
-            <div className='productInfor'>
-            <h2>{productName}</h2>
-            <p>{productPrice}</p>
-            </div>
-            <div><button onClick={this.addToCart} value={product_id} className='cartBtn'>-</button></div>
-            </div>
+       return(
+           <section className='productsss'>
+           
+               <div className='productImageContainer'>
+                   <img className='productImg' src={productImage}/>
+               </div>
+               <div className='productInfo'>
+               <h2 className='product'>{productName}</h2>
+               <p className='product'>{productPrice}</p>
+               <button onClick={this.addToCart} value={product_id} className='cartBtn'>-</button>
+               </div>
+           </section> 
+            
        )
    }
    

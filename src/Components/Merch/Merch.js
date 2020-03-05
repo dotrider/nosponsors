@@ -37,13 +37,15 @@ getAllProducts = () => {
             product_id={product.product_id}/>
         })
         return(
-            <section>
-                <div className='cartIcon'>
+            <section className='merch'>
+                {/* <div className='cartIcon'>
                     <FiShoppingCart size="30px" id='cart' />
-                </div>
+                </div> */}
+
                 <div className='productContainer'>
                 {mappedProducts}
                 </div>
+               
             </section>
         )
     }

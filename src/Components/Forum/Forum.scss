@@ -1,7 +1,26 @@
+.subHeading {
+   height: 60px;
+   color: white;
+   font-size: 2rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 10px 40px;
+}
+.subHeading h2 {
+   display: inline-block;
+}
 
+.userNameSub {
+   color: red;
+}
 
 .logoutBtn {
    border: none;
    background: none;
    font-size: 1.5rem;
+}
+
+.postBtnContainer {
+   text-align: center;
 }

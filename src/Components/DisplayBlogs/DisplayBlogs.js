@@ -20,7 +20,7 @@ handleCommentToggle= () => {
     })
 }
     render(){
-        console.log('USER!',this.props.user)
+        // console.log('USER!',this.props.user)
         // console.log('My unique blog id: ', this.props.blogId)
         // console.log(this.props.title)
         const {title, blog, date, blogId, userId, username, user} =this.props
@@ -29,7 +29,7 @@ handleCommentToggle= () => {
 
         const mappedComments = this.props.comments.map(comment => {
         return  <div className='commentCont'>
-                   <div className='meta'> <p className='font'>{moment(comment.post_date).format('lll')} </p> 
+                   <div className='meta'> <p className='font'>{moment(comment.post_date).format('lll')} {this.props.username}</p> 
         {user !== comment.user_id? null : <button className='deleteBtn' onClick={() => this.props.deleteComment(comment.comment_id)}/>} 
                    </div>
                     <div key={comment.id} className='commentsSec'> {comment.comment}</div>

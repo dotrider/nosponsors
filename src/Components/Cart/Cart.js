@@ -40,26 +40,30 @@ class Cart extends Component{
 
     
     render(){
-
         function handleToken(token, addresses){
             console.log({token, addresses})
             }
 
+
+
         const mappedCart = this.state.cart.map(cart => {
-            return <div key={Cart.id}>
-             <img className='cartProductImg' src={cart.product_img}/>  
-            <p>Product: {cart.name}</p>
-            <p>Price: {cart.price}</p>
-            <p>Quantity: {cart.quantity}</p> 
-            {/* <p>Total: {cart.sum}</p> */}
-            {/* <p>Total: {cart.sum}</p> */}
-            <button onClick={this.decreaseQty} value={cart.product_id}/>
-            </div> 
+            return <div key={Cart.id} className='cartItems'>
+                <div className='cartImage'><img className='cartProductImg' src={cart.product_img}/></div>  
+                <p>Product: {cart.name}</p>
+                <p>Price: {cart.price}</p>
+                <p>Quantity: {cart.quantity}</p> 
+                {/* <p>Total: {cart.sum}</p> */}
+                {/* <p>Total: {cart.sum}</p> */}
+                <button onClick={this.decreaseQty} value={cart.product_id}/>
+                </div> 
         })
         return(
             <section>
+                <div className='cart-container'>
                 {mappedCart} 
-                <div>{/*working on checkout/Stripe*/}
+                </div>
+               
+                <div className='stripe'>
                 <StripeCheckout
                     stripeKey='pk_test_52pNzyxRFrzjtCyGvyiEkrmc00kviWNBzl'
                     token={handleToken}
