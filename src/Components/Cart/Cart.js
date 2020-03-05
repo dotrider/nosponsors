@@ -76,9 +76,8 @@ class Cart extends Component{
             <section>
                 <div className='cart-container'>
                 {mappedCart} 
-               <div className='total'> Total: ${totalCart}</div> 
                 </div>
-               
+                <div className='total'> Total: ${totalCart}</div> 
                 <div className='stripe'>
                 <StripeCheckout
                     stripeKey='pk_test_52pNzyxRFrzjtCyGvyiEkrmc00kviWNBzl'
