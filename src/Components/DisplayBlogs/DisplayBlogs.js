@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import './DisplayBlogs.scss'
 import Comments from '../Comments/Comments';
 import moment from 'moment';
+import profilePic from '../../image/iconfinder_profile-filled_299075.png'
 // import {connect} from 'react-redux';
 // import {setUser} from '../../redux/reducer';
 
@@ -50,7 +51,7 @@ hideMenu= () => {
         return(
             <section className='forum-grid'>     
                 <div className='userInfo'> 
-                    <div className='profilePic'><img></img></div>
+                    <div className='profilePic'><img src={profilePic}></img></div>
                    <p className='userData'>USERNAME</p> 
                    <p className='userData'>Date Joinned:</p> 
                 </div>
