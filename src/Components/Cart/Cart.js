@@ -54,10 +54,9 @@ class Cart extends Component{
             console.log({token, addresses})
             }
 
-            console.log('total', this.state.cart)
+            // console.log('total', this.state.cart)
             const totalCart = this.state.cart.reduce((total, item) => {
-                console.log('qt',item.quantity,'price', item.price)
-              
+                // console.log('qt',item.quantity,'price', item.price)              
                 return total = total + parseInt(item.quantity) * parseInt(item.price)
             },0)    
     
@@ -84,8 +83,10 @@ class Cart extends Component{
                     token={handleToken}
                     billingAddress
                     shippingAddress
-                    ammount={totalCart}
+                    name='#NoSponsors'
+                    amount={totalCart * 100}
             />
+       
                 </div>
             </section>
         )

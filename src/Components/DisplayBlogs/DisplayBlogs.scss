@@ -90,7 +90,7 @@
     grid-template-columns: 150px 230px 230px;
     width: 60%;
     grid-auto-rows: minmax(20px, auto);
-    background-color: rgba(0, 221, 255, 0.292);
+    background-color: rgba(253, 252, 252, 0.211);
     border-radius: 8px;
     justify-content: center;
     // margin: 15px;
@@ -99,7 +99,7 @@
 .userInfo {
     grid-column: 1;
     grid-row: 1/6;
-    background-color: rgb(92, 194, 162);
+    background-color: rgba(175, 47, 30, 0.523);
     padding: 10px;
 
 
@@ -110,7 +110,6 @@
     grid-row: 1;
     padding: 10px;
     font-size: larger;
-    color: white;
     display: flex;
     justify-content: space-between;
 
@@ -122,7 +121,7 @@
     padding: 10px;
     box-shadow: 2px 2px 5px 0 rgba(42, 41, 41, 0.281);
     height: 40px;
-
+    color: #CBCBCB;
 }
 .replySect {
   
@@ -150,6 +149,7 @@
 
 .date {
     font-size: .85rem;
+    color: white;
 }
 
 .meta {
@@ -218,4 +218,15 @@
 .profilePic > img {
     width: 90px;
     height: 90px;
+}
+
+.blogTitle > h2 {
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: rgba(226, 52, 39, 0.776);
+}
+
+.clock {
+    width: 10px;
+    height: 10px;
 }
