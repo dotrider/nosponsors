@@ -2,9 +2,9 @@ module.exports = {
 
     checkOut: async(req, res, next) => {
         db = req.app.get('db')
-        const {user_id} = req.session.user
+        const {id} = req.params
       
-        const checkout = await db.checkout(user_id)
+        const checkout = await db.checkout(id)
         res.status(200).send(checkout)
     }
 }

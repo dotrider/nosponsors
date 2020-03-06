@@ -47,12 +47,43 @@ class Cart extends Component{
         })
     }
 
+    // componentDidUpdate(preProps, preState){
+    //     if(preState.cart !== this.state.cart){
+    //         this.getCart()
+    //     }
+    // }
+
+    // handleToken = (token, addresses) => {
+    //     console.log('hit!!!', this.handleToken)
+    //     const id = this.state.cart[0].cart_id
+    //     axios.delete(`/api/cart/checkout/${id}`).then(res => {
+    //       console.log('res!',res)
+    //       this.setState = ({
+    //           cart: res.data
+    //       })
+    //     })            
+    //     }
+
+    handleToken = (token, addresses) => {
+        console.log('hit!!!', this.handleToken)
+        const id = this.state.cart[0].cart_id
+        axios.delete(`/api/cart/checkout/${id}`).then(res => {
+          console.log('res!',res)
+          this.setState = ({
+              cart: res.data
+          })
+        })  
+        this.props.history.push('/merch')          
+        }
     
     render(){
         
-        function handleToken(token, addresses){
-            console.log({token, addresses})
-            }
+        // function handleToken(token, addresses){
+        //     // console.log({token, addresses})
+        //     alert('SUCCESS!')
+        //     }
+
+        
 
             // console.log('total', this.state.cart)
             const totalCart = this.state.cart.reduce((total, item) => {
@@ -67,6 +98,7 @@ class Cart extends Component{
                 <p>Product: {cart.name}</p>
                 <p>Price: {cart.price}</p>
                 <p>Quantity: {cart.quantity}</p> 
+
                 <button onClick={this.decreaseQty} value={cart.product_id}/>
                 <button onClick={this.increaseQty} value={cart.product_id}/>
                 </div> 
@@ -75,12 +107,13 @@ class Cart extends Component{
             <section>
                 <div className='cart-container'>
                 {mappedCart} 
+            
                 </div>
                 <div className='total'> Total: ${totalCart}</div> 
                 <div className='stripe'>
                 <StripeCheckout
                     stripeKey='pk_test_52pNzyxRFrzjtCyGvyiEkrmc00kviWNBzl'
-                    token={handleToken}
+                    token={this.handleToken}
                     billingAddress
                     shippingAddress
                     name='#NoSponsors'
