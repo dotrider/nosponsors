@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import './DisplayBlogs.scss'
 import Comments from '../Comments/Comments';
 import moment from 'moment';
-import profilePic from '../../image/iconfinder_profile-filled_299075.png'
+// import profilePic from '../../image/iconfinder_profile-filled_299075.png'
 import clockPic from '../../image/iconfinder_clock_226587.png'
 // import {connect} from 'react-redux';
 // import {setUser} from '../../redux/reducer';
@@ -37,7 +37,7 @@ hideMenu= () => {
         // console.log('USER!',this.props.user)
         // console.log('My unique blog id: ', this.props.blogId)
         // console.log(this.props.title)
-        const {title, blog, date, blogId, userId, username, user} =this.props
+        const {title, blog, date, blogId, userId, username, user, profilepic} =this.props
        
 
 
@@ -52,11 +52,11 @@ hideMenu= () => {
         return(
             <section className='forum-grid'>     
                 <div className='userInfo'> 
-                    <div className='profilePic'><img src={profilePic}/></div>
-                   <p className='userData'>USERNAME</p> 
+                    <div className='profilePic'><img src={profilepic}/></div>
+                   <p className='userData'>USERNAME: {username}</p> 
                    <p className='userData'>Date Joinned:</p> 
                 </div>
-                 <div className='blogTitle'><h2>{title}{username}<p className='date'> <img className='clock' src={clockPic}/> {date}</p></h2><div>{user !== userId? null : <button className='menuBtn' onClick={this.toggleMenu}/>} 
+                 <div className='blogTitle'><h2>{title}<p className='date'> <img className='clock' src={clockPic}/> {date}</p></h2><div>{user !== userId? null : <button className='menuBtn' onClick={this.toggleMenu}/>} 
                 {this.state.displayMenu ?  <button className='deleteBtn dltBlogBtn'onClick={()=> this.props.deleteBlog(blogId)}/>   : '' }
                   </div>
                  </div> 

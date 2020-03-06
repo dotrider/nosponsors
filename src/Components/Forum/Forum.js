@@ -165,7 +165,8 @@ render(){
         deleteComment={this.deleteComment}
         deleteBlog={this.deleteBlog}
         // username={this.props.user.username}//for user session
-        username={post.user_id.username}
+        username={post.username}
+        profilepic={post.profile_pic}
         userId = {post.user_id}
         user={this.props.user.user_id}
         />
