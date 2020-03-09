@@ -43,17 +43,19 @@ hideMenu= () => {
 
         const mappedComments = this.props.comments.map(comment => {
         return  <div className='commentCont'>
-                <div className='meta'> <p className='commentDate'>{moment(comment.post_date).format('lll')} {this.props.username}</p> 
+                <div className='meta'> <p className='commentDate'>{moment(comment.post_date).format('lll')} <span className='commentUserName'>{this.props.username}</span></p> 
                 {user !== comment.user_id? null : <button className='deleteBtn' onClick={() => this.props.deleteComment(comment.comment_id)}/>} 
                 </div>
                 <div key={comment.id} className='commentsSec'> {comment.comment}</div>
          </div>
         })
         return(
+            <div>
             <section className='forum-grid'>     
                 <div className='userInfo'> 
                     <div className='profilePic'><img src={profilepic}/></div>
-                   <p className='userData'>USERNAME: {username}</p> 
+                   <p className='userData'>Username</p> 
+                   <p className='userData userName'>{username}</p>     
                    <p className='userData'>Date Joinned:</p> 
                 </div>
                  <div className='blogTitle'><h2>{title}<p className='date'> <img className='clock' src={clockPic}/> {date}</p></h2><div>{user !== userId? null : <button className='menuBtn' onClick={this.toggleMenu}/>} 
@@ -70,7 +72,12 @@ hideMenu= () => {
                 <div className = 'commentsC'>
                  {mappedComments} 
                 </div>
+                
             </section>
+           
+               <hr/>
+           </div>
+        
         )
     }
 }

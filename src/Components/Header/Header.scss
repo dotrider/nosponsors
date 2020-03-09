@@ -1,30 +1,96 @@
-header {
-    background-color: rgb(20, 19, 19);
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
+//Media Ready
 
-}
-.links {
+header {
+  background-color: rgb(20, 19, 19);
+  padding: 20px;
   display: flex;
-  font-size: 1.5rem;
+  justify-content: space-between;
+}
+
+.links {
+  font-size: .65rem;
   justify-content: space-evenly;
   align-items: center;
   text-decoration: none;
+  display: flex;
+}
+
+.logo {
+  height: 2em;
 }
 
 a {
   text-decoration: none;
   color: rgb(223, 222, 222);
-  padding: 10px;
- 
+  padding: 10px; 
 }
 
 a:hover {
   color: white;
 }
 
-.logo {
-  height: 2.5em;
+
+.hamburger {
+  height: 35px;
+  background-color: rgb(196, 23, 23);
+  border-radius: 5px;
 }
 
+
+.deskNav {
+  display: none;
+}
+
+.hidemenu {
+  display: none;
+}
+
+
+
+.viewmenu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #212528;
+  height: 160px;
+  position: absolute;
+  z-index: 3;
+  animation-name: drop;
+  animation-duration: .1s;
+}
+
+@keyframes drop {
+  0% {
+      height: 0;
+  }
+  100% {
+      height: 160px;
+  }
+
+}
+
+
+@media (min-width: 769px){
+
+.links {
+  font-size: 1.5rem;
+}
+
+
+.logo {
+  height: 3em;
+}
+
+.hamburger {
+  height: 50px;
+  display:none;
+  background-color: red;
+}
+.viewmenu {
+  display: none;
+}
+.deskNav {
+  display: flex;
+}
+
+}

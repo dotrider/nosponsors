@@ -59,7 +59,7 @@ app.post('/api/carts/:id', decreaseQty);
 app.get('/api/cart', getCart);
 
 //CHECKOUT
-app.delete('/api/cart/checkout/:id', checkOut);//Working on checkout
+app.delete('/api/checkout/:id', checkOut);//Working on checkout
 
 
 

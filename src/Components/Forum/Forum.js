@@ -17,7 +17,7 @@ class Blogs extends Component{
          blogs: [], 
         // From my join table - blog and comments => blogAndComments: [],
         comments:[],
-        toggleBlog: false
+        toggleBlog: false,
      }
      
  }
@@ -31,6 +31,7 @@ class Blogs extends Component{
     // console.log('ComponentDidMount', this.props)
   
 }
+
  
 ///BLOG SECTION///
  getAllBlogs = async () => {

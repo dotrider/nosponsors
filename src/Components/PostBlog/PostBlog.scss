@@ -1,28 +1,31 @@
 @import '../../style/variables/variables.scss';
+//Media Ready
 
 .composeBlog {
-    width: 50%;
-    background-color: $containerBg;
-    border-radius: 5px;
-    margin: 25px auto;
+    width: 100%;
+    background-color: rgb(61, 61, 61);
+    border-radius: 2px;  
     padding: 15px;
+    position: fixed;
+    bottom: 0;
+    justify-content: center;
 }
 
 
 
 .postInput {
     width: 90%;
-    height: 15px;
+    height: 25px;
 }
 
 .blogPost {
-    height: 25px;
+    height: 50px;
     width: 90%;
 
 }
 
 .submitBtn {
-    width: 100px;
+    width: 80px;
 }
 
 input {
@@ -31,6 +34,9 @@ input {
 
 .cancelCont {
     height: 20px;  
+    display: flex;
+    justify-content: space-between;
+    width:90%
 }
 .cancelBtn {
     background: url(../../image/buttons/iconfinder_Close_1031533.svg) no-repeat top left ;
@@ -42,22 +48,7 @@ input {
     outline:none;
 }
 
-.composeBlogBtn {
-	box-shadow:inset 0px 0px 11px 0px #f5978e;
-	background:linear-gradient(to bottom, #ec3b2e 5%, #be281a 100%);
-	background-color:#da3428;
-	border-radius:10px;
-	border:1px solid #d02718;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:12px;
-	font-weight:bold;
-	padding:10px 14px;
-	text-decoration:none;
-	text-shadow:-1px 2px 7px #cc2c21;
-}
+
 .composeBlogBtn:hover {
 	background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
 	background-color:#c62d1f;
@@ -65,6 +56,16 @@ input {
 .composeBlogBtn:active {
 	position:relative;
 	top:1px;
+}
+
+@media (min-width: 768px){
+    .composeBlog {
+        position: static;
+        width: 60%;
+        margin: 25px auto;
+        border-radius: 5px;
+    }
+        
 }
 
 

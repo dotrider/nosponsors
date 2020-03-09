@@ -101,8 +101,9 @@ class Login extends Component {
               <br/>
               <button className='btn' onClick={() => this.setState({ register: true})}> Sign up</button>
             </form>  
+            <br/>
            {this.state.login?
-           <p>Incorrect email or password</p>
+           <p className='loginText'>Incorrect email or password</p>
           :
           <p></p>}
           </div>
@@ -140,11 +141,14 @@ class Login extends Component {
             </form>
        
             <br/>
-            <h4>Already have an account</h4>
-            <button className='btn'
+            <p className='loginText'>Already have an account?</p>
+            <br/>
+            <div className='loginRegister'>
+            <button className='loginBtn btn'
               onClick={() =>
                 this.setState({
                   register: false})}>Login</button>
+                  </div>
           </div>
         )}
         </div>

@@ -49,10 +49,11 @@ const {blog_img, blog_title, blog} = this.state
                 <input className='postInput' value={blog_img} name='blog_img' placeholder='Image' onChange={this.handleChange}/>
                 <input className='postInput' value={blog_title} name='blog_title' placeholder='Title' onChange={this.handleChange}/>
                 <input className='blogPost' value={blog} name='blog' placeholder='blog'onChange={this.handleChange}/>
-                <input className='submitBtn' onClick={this.addBlog} type='submit' value="Post" />
+             
                
                 <div className='cancelCont'>
                 <button className='cancelBtn' onClick={this.props.toggle}/>
+                <input className='submitBtn' onClick={this.addBlog} type='submit' value="Post" />
                 </div>
         </section>
 

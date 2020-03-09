@@ -1,106 +1,26 @@
+@import '../../style/variables/variables.scss';
 
-
-// .displayBlogsCont {
-//     width: 50%;
-//     background-color: rgba(0, 255, 123, 0.137);
-//     border-radius: 5px;
-//     margin: 25px auto;
-//     box-shadow: 2px 2px 5px 0 rgba(42, 41, 41, 0.281);
-//     flex-direction: column;
-//     justify-content: center;
-//     align-items: flex-start;
-//     padding: 15px;
-// }
-
-// .blogTitle {
-//     font-size: larger;
-//     color: white;
-//     padding-bottom: 10px;
-//     display: flex;
-//     justify-content: space-between;
-// }
-
-// .blog {
-//     width: 95%;
-//     min-height: 30px;
-//     padding: 5px;
-// }
-
-// .replySect {
-//     height: 25px;
-// }
-
-// .replyBtn {
-//     background: url(../../image/buttons/iconfinder_Pinterest_UI-13_2540585.svg) no-repeat top left ;
-//     background-size: contain;
-//     height: 40px;
-//     width: 40px;
-//     border: none;
-//     cursor: pointer;
-//     outline:none;
-// }
-
-// .deleteBtn {
-//     background: url(../../image/buttons/iconfinder_v-30_3162615.svg) no-repeat top left;
-//     background-size: contain;
-//     height: 15px;
-//     width: 15px;
-//     border: none;
-//     cursor: pointer;
-//     outline:none;
-
-// }
-
-// .commentsSec {
-//     width: 90%;
-//     background-color: rgba(160, 155, 155, 0.137);
-//     border-radius: 5px;
-//     margin: 15px auto 0;
-//     box-shadow: 2px 2px 5px 0 rgba(42, 41, 41, 0.281);
-//     padding: 10px;
-//     color:rgb(255, 251, 250);
-// }
-// .commentCont{
-//     width: 85%;
-//     background-color: rgba(160, 155, 155, 0.137);
-//     border-radius: 5px;
-//     margin: 15px auto 0;
-//     box-shadow: 2px 2px 5px 0 rgba(42, 41, 41, 0.281);
-// }
-
-
-// .font {
-//     font-size: .75rem;
-//     display: inline;
-// }
-
-// .meta {
-//     display: flex;
-//     justify-content: space-between;
-// }
-
-// .date {
-//     font-size: .85rem;
-// }
-
-////////
-
+hr {
+   background-color: red;
+   width: 95%;
+}
 .forum-grid {
     display: grid;
-    grid-template-columns: 150px 230px 230px;
-    width: 60%;
+    grid-template-columns: 90px 135px 135px;
+    width: 340px;
     grid-auto-rows: minmax(20px, auto);
-    background-color: rgba(253, 252, 252, 0.211);
-    border-radius: 8px;
+    // background-color: rgba(15, 12, 12, 0.81);
+    border-radius: 5px;
     justify-content: center;
-    // margin: 15px;
     margin: 25px auto 0;
 }
 .userInfo {
     grid-column: 1;
     grid-row: 1/6;
-    background-color: rgba(175, 47, 30, 0.523);
+    // background-color: rgba(25, 35, 73, 0.748);
     padding: 10px;
+    color: $black;
+    font-family: $title;
 
 
 }
@@ -115,41 +35,52 @@
 
 }
 
+.userName {
+    color: $red;
+    font-family: $text;
+    font-weight: 700;
+}
+
 .blog {
     grid-column: 2 / 4;
     grid-row:2/3;
-    padding: 10px;
-    box-shadow: 2px 2px 5px 0 rgba(42, 41, 41, 0.281);
+    padding: 5px;
+    // box-shadow: 2px 2px 5px 0 rgba(42, 41, 41, 0.281);
     height: 40px;
-    color: #CBCBCB;
+    color: $black;
+    font-family: $text;
 }
 .replySect {
-  
-    height: 25px;
+    height: 5px;
 }
 
 .comments {
     grid-column: 2/4;
-    background-color: rgba(160, 155, 155, 0.137);
+    // background-color: rgba(160, 155, 155, 0.137);
 }
 
 .commentsC{
     grid-column: 2/4;
     grid-row:5/6;
-    padding: 10px 10px;
-    background-color: rgba(160, 155, 155, 0.137);
+    padding: 5px;
+    // background-color: rgba(160, 155, 155, 0.137);
 
 }
 
 .commentCont {
-    box-shadow: 2px 2px 5px 0 rgba(42, 41, 41, 0.281);
+    // box-shadow: 2px 2px 5px 0 rgba(42, 41, 41, 0.281);
     padding: 5px 0;
   
 }
 
+.commentsSec {
+    font-family: $text;
+}
+
 .date {
-    font-size: .85rem;
-    color: white;
+    font-size: .75rem;
+    color: $black;
+    font-family: $time;
 }
 
 .meta {
@@ -160,9 +91,15 @@
 .commentDate {
     font-size: .75rem;
     padding-bottom: 10px;
-    color: white;
+    color: $black;
+    font-family: $time;
 }
 
+.commentUserName {
+    color: $red;
+    font-family: $text;
+    font-size: .85rem;
+}
 ///Buttons
 
 .deleteBtn {
@@ -203,11 +140,10 @@
 }
 
 .profilePic {
-    width: 90px;
-    height: 90px;
+    width: 60px;
+    height: 60px;
     background-color: gray;
     margin: 0 auto;
-    margin: 20px 20px;
 }
 
 .userData {
@@ -216,17 +152,169 @@
 }
 
 .profilePic > img {
-    width: 90px;
-    height: 90px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
 }
 
 .blogTitle > h2 {
     font-weight: 900;
     font-size: 1.5rem;
-    color: rgba(226, 52, 39, 0.776);
+    color: $red;
 }
 
 .clock {
     width: 10px;
     height: 10px;
+}
+
+@media (min-width: 769px) {
+
+    .forum-grid {
+        display: grid;
+        grid-template-columns: 150px 230px 230px;
+        width: 630px;
+        grid-auto-rows: minmax(20px, auto);
+        background-color: rgba(253, 252, 252, 0.211);
+        border-radius: 8px;
+        justify-content: center;
+        // margin: 15px;
+        margin: 25px auto 0;
+    }
+
+    // .userInfo {
+    //     grid-column: 1;
+    //     grid-row: 1/6;
+    //     background-color: rgba(175, 47, 30, 0.523);
+    //     padding: 10px;
+    
+    
+    // }
+    
+    // .blogTitle {
+    //     grid-column: 2 / 4;
+    //     grid-row: 1;
+    //     padding: 10px;
+    //     font-size: larger;
+    //     display: flex;
+    //     justify-content: space-between;
+    
+    // }
+    
+    // .blog {
+    //     grid-column: 2 / 4;
+    //     grid-row:2/3;
+    //     padding: 10px;
+    //     box-shadow: 2px 2px 5px 0 rgba(42, 41, 41, 0.281);
+    //     height: 40px;
+    //     color: #CBCBCB;
+    // }
+    // .replySect {
+      
+    //     height: 25px;
+    // }
+    
+    // .comments {
+    //     grid-column: 2/4;
+    //     background-color: rgba(160, 155, 155, 0.137);
+    // }
+    
+    // .commentsC{
+    //     grid-column: 2/4;
+    //     grid-row:5/6;
+    //     padding: 10px 10px;
+    //     background-color: rgba(160, 155, 155, 0.137);
+    
+    // }
+    
+    // .commentCont {
+    //     box-shadow: 2px 2px 5px 0 rgba(42, 41, 41, 0.281);
+    //     padding: 5px 0;
+      
+    // }
+    
+    // .date {
+    //     font-size: .85rem;
+    //     color: white;
+    // }
+    
+    // .meta {
+    //     display: flex;
+    //     justify-content: space-between;
+    // }
+    
+    // .commentDate {
+    //     font-size: .75rem;
+    //     padding-bottom: 10px;
+    //     color: white;
+    // }
+    
+    // ///Buttons
+    
+    // .deleteBtn {
+    //     background: url(../../image/buttons/iconfinder_v-30_3162615.svg) no-repeat top left;
+    //     background-size: contain;
+    //     height: 15px;
+    //     width: 15px;
+    //     border: none;
+    //     cursor: pointer;
+    //     outline:none;
+    // }
+    
+    
+    // .dltBlogBtn {
+    //     vertical-align: top;
+    //     margin-top: 12px;
+    
+    // }
+    
+    // .replyBtn {
+    //     background: url(../../image/buttons/iconfinder_Pinterest_UI-13_2540585.svg) no-repeat top left ;
+    //     background-size: contain;
+    //     height: 40px;
+    //     width: 40px;
+    //     border: none;
+    //     cursor: pointer;
+    //     outline:none;
+    // }
+    
+    // .menuBtn {
+    //     background: url(../../image/buttons/iconfinder_User_Interface-26_2044262.svg) no-repeat top left ;
+    //     background-size: contain;
+    //     height: 40px;
+    //     width: 40px;
+    //     border: none;
+    //     cursor: pointer;
+    //     outline:none;
+    // }
+    
+    // .profilePic {
+    //     width: 90px;
+    //     height: 90px;
+    //     background-color: gray;
+    //     margin: 0 auto;
+    //     margin: 20px 20px;
+    // }
+    
+    // .userData {
+    //    text-align: center;
+    //    line-height: 1.5em;
+    // }
+    
+    // .profilePic > img {
+    //     width: 90px;
+    //     height: 90px;
+    // }
+    
+    // .blogTitle > h2 {
+    //     font-weight: 900;
+    //     font-size: 1.5rem;
+    //     color: rgba(226, 52, 39, 0.776);
+    // }
+    
+    // .clock {
+    //     width: 10px;
+    //     height: 10px;
+    // }
+    
 }

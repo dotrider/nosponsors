@@ -2,8 +2,6 @@ import React,{Component} from 'react';
 import './Products.scss';
 import axios from 'axios';
 
-import Cart from '../Cart/Cart';
-
 
 class Products extends Component{
     constructor(props){
@@ -34,9 +32,13 @@ addToCart = (e) => {
                    <img className='productImg' src={productImage}/>
                </div>
                <div className='productInfo'>
+                   <div>
                <h2 className='product'>{productName}</h2>
-               <p className='product'>{productPrice}</p>
-               <button onClick={this.addToCart} value={product_id} className='cartBtn'>-</button>
+               <p className='product'>${productPrice}</p>
+               </div>
+               <div>
+               <button onClick={this.addToCart} value={product_id} className='cartBtn'/>
+               </div>
                </div>
            </section> 
             

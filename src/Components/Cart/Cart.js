@@ -53,29 +53,31 @@ class Cart extends Component{
     //     }
     // }
 
-    // handleToken = (token, addresses) => {
+    // handleToken = () => {
     //     console.log('hit!!!', this.handleToken)
     //     const id = this.state.cart[0].cart_id
-    //     axios.delete(`/api/cart/checkout/${id}`).then(res => {
+    //     axios.delete(`/api/checkout/${id}`).then(res => {
     //       console.log('res!',res)
     //       this.setState = ({
     //           cart: res.data
     //       })
-    //     })            
+    //     })  
+    //     this.props.history.push('/cart')          
     //     }
+    
 
-    handleToken = (token, addresses) => {
+    handleToken = async () => {
         console.log('hit!!!', this.handleToken)
         const id = this.state.cart[0].cart_id
-        axios.delete(`/api/cart/checkout/${id}`).then(res => {
-          console.log('res!',res)
+        const res = await axios.delete(`/api/checkout/${id}`)
           this.setState = ({
               cart: res.data
           })
-        })  
-        this.props.history.push('/merch')          
+      
+        this.props.history.push('/cart')          
         }
-    
+
+
     render(){
         
         // function handleToken(token, addresses){
@@ -95,12 +97,16 @@ class Cart extends Component{
         const mappedCart = this.state.cart.map(cart => {
             return <div key={Cart.id} className='cartItems'>
                 <div className='cartImage'><img className='cartProductImg' src={cart.product_img}/></div>  
+                <div className='productInformation'>
                 <p>Product: {cart.name}</p>
                 <p>Price: {cart.price}</p>
                 <p>Quantity: {cart.quantity}</p> 
-
-                <button onClick={this.decreaseQty} value={cart.product_id}/>
-                <button onClick={this.increaseQty} value={cart.product_id}/>
+                </div>
+                <br/>
+                <div className='quantityContainer'>
+                <button className='decreaseQTY' onClick={this.decreaseQty} value={cart.product_id}/>
+                <button className='increaseQTY' onClick={this.increaseQty} value={cart.product_id}/>
+                </div>
                 </div> 
         })
         return(
@@ -110,6 +116,7 @@ class Cart extends Component{
             
                 </div>
                 <div className='total'> Total: ${totalCart}</div> 
+                <br/>
                 <div className='stripe'>
                 <StripeCheckout
                     stripeKey='pk_test_52pNzyxRFrzjtCyGvyiEkrmc00kviWNBzl'
