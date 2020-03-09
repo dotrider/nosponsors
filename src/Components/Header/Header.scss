@@ -1,8 +1,8 @@
 //Media Ready
 
-header {
+.navBar {
   background-color: rgb(20, 19, 19);
-  padding: 20px;
+  padding: 15px;
   display: flex;
   justify-content: space-between;
 }
@@ -16,7 +16,7 @@ header {
 }
 
 .logo {
-  height: 2em;
+  height: 2.2em;
 }
 
 a {
@@ -50,9 +50,9 @@ a:hover {
 .viewmenu {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   background-color: #212528;
   height: 160px;
+  width: 100vw;
   position: absolute;
   z-index: 3;
   animation-name: drop;

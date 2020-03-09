@@ -1,3 +1,4 @@
+@import '../../style/variables/variables.scss';
 //MEDIA READY
 .productContainer {
     display: grid;
@@ -7,11 +8,15 @@
     grid-column-gap: 30px;
     grid-row-gap: 30px;
     
+    
 }
 
 .productsss {
     border: .1px solid;
+    background-color: white;
+  
 }
+
 
 @media (min-width: 768px) {
 
@@ -27,14 +32,11 @@
 
 }
 
-.merch {
-    margin: 0 auto;
-}
 }
 
 @media (min-width: 1044px) {
     .productContainer{
     grid-template-columns: repeat(3, 280px);
-    margin: 80px auto;
+    margin: 80px auto 40px;
     }
 }

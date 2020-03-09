@@ -1,3 +1,4 @@
+@import '../../style/variables/variables.scss';
 
 .productInformation{
     text-align: center;
@@ -36,8 +37,10 @@
 }
 
 .total {
-    color: black;
+    color: $black;
     text-align: center;
+    font-family: $title;
+    font-size: 1.5rem;
 }
 
 .decreaseQTY {
@@ -58,12 +61,18 @@
     border: none;
     cursor: pointer;
     outline:none;
+    color: red;
 }
 
 .quantityContainer {
     display: flex;
     justify-content: space-evenly;
     
+}
+
+p > span {
+    color: white;
+    font-family: $title;
 }
 
 @media(min-width: 768px){

@@ -34,7 +34,7 @@ addToCart = (e) => {
                <div className='productInfo'>
                    <div>
                <h2 className='product'>{productName}</h2>
-               <p className='product'>${productPrice}</p>
+               <p className='product price'>${productPrice}</p>
                </div>
                <div>
                <button onClick={this.addToCart} value={product_id} className='cartBtn'/>

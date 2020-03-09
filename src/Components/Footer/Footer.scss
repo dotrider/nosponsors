@@ -1,7 +1,23 @@
+@import '../../style/variables/variables.scss';
+
 .footer {
     background-color: black;
-    height:5vh;
     position: fixed;
     bottom: 0;
     width: 100%;
+    font-size: 1rem;
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.footer > p {
+    color: rgb(138, 132, 132);
+}
+
+.footer > p > span {
+    color: $red;
+    font-family: $text;
+    
 }

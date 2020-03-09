@@ -6,7 +6,7 @@ const massive = require('massive');
 
 const {SERVER_PORT, SESSION_SECRET, CONNECTION_STR, SKEY} = process.env;
 const {login, register, userSession, logout} = require('./controller/authCtr');
-const {getBlogs, addBlog, getBlogsAndComents, deleteBlog} = require('./controller/blogsCtr');
+const {getBlogs, addBlog, getBlogsAndComents, deleteBlog, updateBlog} = require('./controller/blogsCtr');
 const {getAllBlogComments, addCommentToBlog, deleteComment} = require('./controller/blogCmCtr')
 const {getProducts} = require('./controller/productsCtr')
 const {addToCart, decreaseQty, getCart} = require('./controller/cartCtr')
@@ -40,6 +40,7 @@ app.get('/auth/logout', logout);
 app.get('/api/blogs', getBlogs);
 app.post('/api/blogs', addBlog);
 app.delete('/api/blogs/:id', deleteBlog);
+app.put('./api/blogs/:id', updateBlog);
 
 
 //BlOG COMMENTS

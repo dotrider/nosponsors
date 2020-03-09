@@ -29,7 +29,7 @@ module.exports = {
 
     register: async (req, res, next) => {
         const db = req.app.get('db');
-        const {username, password, email} = req.body
+        const {username, password, email, profile_pic} = req.body
 
         const foundUser = await db.select_user(email).catch(err => {
             console.log(err);
@@ -40,7 +40,7 @@ module.exports = {
                 const saltRounds = 12;
                 bcrypt.genSalt(saltRounds).then( salt => {
                     bcrypt.hash(password, salt).then(hashedPassword => {
-                        db.create_user([username, hashedPassword, email]).then(([user]) => {
+                        db.create_user([username, hashedPassword, email, profile_pic]).then(([user]) => {
                             req.session.user = user;
                             res.status(200).send(req.session.user)
                         })

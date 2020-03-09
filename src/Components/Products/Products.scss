@@ -1,9 +1,9 @@
+@import '../../style/variables/variables.scss';
 //Media Ready
 
 .productImageContainer {
     height: 240px;
     width: 240px;
-    background-color: white;
 }
 
 .productImg {
@@ -16,9 +16,18 @@ width: 100%;
 .productInfo {
     padding: 10px;
     height:60px;
-    color: black;
+    color: $black;
     display: flex;
     justify-content: space-between;
+}
+
+.product {
+    font-family: $title;
+    color: $red;
+}
+
+.price {
+    color: $black;
 }
 
 .cartBtn {

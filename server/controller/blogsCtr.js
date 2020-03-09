@@ -21,6 +21,17 @@ module.exports = {
 
         const blog = await db.delete_blog(id)
         res.status(200).send(blog)
+    },
+
+    updateBlog: async (req, res, next) => {
+        const db = req.app.get('db')
+        const {blog_img, blog_title, blog} = req.body
+        const {id} = req.params
+
+        const updatedBlog = await db.update_blog([blog_img, blog_title, blog, id])
+        res.status(200).send(updatedBlog)
+
+
     }
 
     // getBlogsAndComments: async (req, res, next) => {

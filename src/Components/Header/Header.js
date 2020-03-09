@@ -19,8 +19,8 @@ class Header extends Component{
 
     render(){
     return(
-        <div>
         <header>
+        <div className='navBar'>
             <div>
             <Link to='/'> <img className='logo' src={logo}/></Link>
             </div>       
@@ -33,7 +33,7 @@ class Header extends Component{
                     {/* <button onClick={props.logout}>Logout</button> */}
                 </ul>
                 <img alt='hamburger'onClick={this.toggleNavMenu} className='hamburger' src='https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png'/>         
-        </header>  
+        </div> 
         <div className='mobileMenu'> 
             <ul className={this.state.toggleNav ? 'viewmenu' : 'hidemenu'}>
             {/* <Link to='/'><li> Home </li></Link>  */}
@@ -44,7 +44,7 @@ class Header extends Component{
              {/* <button onClick={props.logout}>Logout</button> */}
          </ul>
          </div> 
-        </div>
+     </header>
     )
     }
 }

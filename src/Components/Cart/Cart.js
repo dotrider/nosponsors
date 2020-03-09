@@ -97,10 +97,11 @@ class Cart extends Component{
         const mappedCart = this.state.cart.map(cart => {
             return <div key={Cart.id} className='cartItems'>
                 <div className='cartImage'><img className='cartProductImg' src={cart.product_img}/></div>  
+                <br/>
                 <div className='productInformation'>
-                <p>Product: {cart.name}</p>
-                <p>Price: {cart.price}</p>
-                <p>Quantity: {cart.quantity}</p> 
+                <p><span>Product:</span> {cart.name}</p>
+                <p><span>Price:</span> ${cart.price}</p>
+                <p><span>Quantity:</span> {cart.quantity}</p> 
                 </div>
                 <br/>
                 <div className='quantityContainer'>
@@ -110,11 +111,12 @@ class Cart extends Component{
                 </div> 
         })
         return(
-            <section>
+            <section className='cartSec'>
                 <div className='cart-container'>
                 {mappedCart} 
             
                 </div>
+                <br/>
                 <div className='total'> Total: ${totalCart}</div> 
                 <br/>
                 <div className='stripe'>

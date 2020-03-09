@@ -185,7 +185,7 @@ render(){
             <button className='logoutBtn' onClick={this.logout}>Logout</button>
             </div>
             <div>        
-                {!this.state.toggleBlog?(<div className='postBtnContainer'><button className='composeBlogBtn' onClick={this.handleToggle}>Create Post</button></div>)
+                {!this.state.toggleBlog?(<div className='postBtnContainer'><button className='composeBlogBtn' onClick={this.handleToggle}>Post</button></div>)
                 :
                 (<div> <PostBlog postBlog = {this.postBlog} toggle={this.handleToggle}/>  </div>)}               
             </div>
