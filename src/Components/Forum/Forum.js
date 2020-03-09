@@ -181,7 +181,7 @@ render(){
         <section className='Mainblogs'>  
          {/* <Header logout={this.logout}/>  */}
          <div className='subHeading'>
-         <h2>Hello, <span className='userNameSub'>{this.props.user.username}</span></h2>
+         <h2 className='greeting'>Hello, <span className='greeting userNameSub'>{this.props.user.username}</span></h2>
             <button className='logoutBtn' onClick={this.logout}>Logout</button>
             </div>
             <div>        

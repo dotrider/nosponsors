@@ -6,9 +6,10 @@ hr {
 }
 .forum-grid {
     display: grid;
-    grid-template-columns: 90px 135px 135px;
+    grid-template-columns: 100px 130px 130px;
     width: 340px;
     grid-auto-rows: minmax(20px, auto);
+    grid-column-gap:5px;
     // background-color: rgba(15, 12, 12, 0.81);
     border-radius: 5px;
     justify-content: center;
@@ -21,6 +22,7 @@ hr {
     padding: 10px;
     color: $black;
     font-family: $title;
+    font-size: .95rem;
 
 
 }
@@ -81,6 +83,7 @@ hr {
     font-size: .75rem;
     color: $black;
     font-family: $time;
+    padding-top: 5px;
 }
 
 .meta {

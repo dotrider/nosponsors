@@ -99,7 +99,7 @@ class Login extends Component {
               <br/>
               <button className='loginBtn btn' type="submit" >Login</button>
               <br/>
-              <button className='btn' onClick={() => this.setState({ register: true})}> Sign up</button>
+              <button className='signupBtn btn' onClick={() => this.setState({ register: true})}> Sign up</button>
             </form>  
             <br/>
            {this.state.login?
@@ -137,7 +137,7 @@ class Login extends Component {
                 onChange={this.handleChange}
               />
               <br/>
-              <button className='btn' type="submit" >Register</button> 
+              <button className='registerBtn btn' type="submit" >Register</button> 
             </form>
        
             <br/>
