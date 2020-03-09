@@ -6,6 +6,7 @@ import moment from 'moment';
 import clockPic from '../../image/iconfinder_clock_226587.png'
 // import {connect} from 'react-redux';
 // import {setUser} from '../../redux/reducer';
+import EditBlog from '../../Components/EditBlog/EditBlog';
 
 
 class DisplayBlogs extends Component{
@@ -13,7 +14,8 @@ constructor(props){
     super(props);
     this.state = {
         toggleComment: false,
-        displayMenu: false
+        displayMenu: false,
+        toggleEdit: false
     }
 }
 
@@ -33,6 +35,14 @@ hideMenu= () => {
         this.setState({ displayMenu: false });
       }
 }
+
+handleEditToggle = () => {
+    this.setState({
+        toggleEdit: !this.state.toggleEdit
+    })
+}
+
+
     render(){
         // console.log('USER!',this.props.user)
         // console.log('My unique blog id: ', this.props.blogId)
@@ -59,7 +69,13 @@ hideMenu= () => {
                    <p className='userData'>Date Joinned:</p> 
                 </div>
                  <div className='blogTitle'><h2>{title}<p className='date'> <img className='clock' src={clockPic}/> {date}</p></h2><div>{user !== userId? null : <button className='menuBtn' onClick={this.toggleMenu}/>} 
-                {this.state.displayMenu ?  <button className='deleteBtn dltBlogBtn'onClick={()=> this.props.deleteBlog(blogId)}/>   : '' }
+                {this.state.displayMenu ? 
+                <div>
+                <button className='deleteBtn dltBlogBtn'onClick={()=> this.props.deleteBlog(blogId)}/> 
+                {!this.state.toggleEdit? <button onClick={this.handleEditToggle} className='editBtn' />  : <EditBlog blogId={this.props.blogId} handleToggleE={this.handleEditToggle} updateBlog={this.props.updateBlog}/>} 
+                </div> 
+                
+                : '' } 
                   </div>
                  </div> 
                 <div className='blog'><p>{blog}</p></div> 

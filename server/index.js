@@ -40,7 +40,7 @@ app.get('/auth/logout', logout);
 app.get('/api/blogs', getBlogs);
 app.post('/api/blogs', addBlog);
 app.delete('/api/blogs/:id', deleteBlog);
-app.put('./api/blogs/:id', updateBlog);
+app.put('/api/blog/:id', updateBlog);
 
 
 //BlOG COMMENTS

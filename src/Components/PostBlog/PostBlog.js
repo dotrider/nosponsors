@@ -39,6 +39,8 @@ addBlog = () => {
    this.props.toggle()
 }
 
+
+
  
 render(){
 const {blog_img, blog_title, blog} = this.state

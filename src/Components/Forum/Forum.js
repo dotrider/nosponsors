@@ -18,6 +18,7 @@ class Blogs extends Component{
         // From my join table - blog and comments => blogAndComments: [],
         comments:[],
         toggleBlog: false,
+        edit:false
      }
      
  }
@@ -67,6 +68,21 @@ deleteBlog = (id) => {
     })
 }
 
+updateBlog = (blogId, blog) => {
+    console.log('updateAxios', blogId, blog)
+    axios.put( `/api/blog/${blogId}`, blog).then(res => {
+        console.log('update', res.data)
+        this.setState({
+            blogs: res.data
+        })
+    })
+}
+
+toggleEdit = () => {
+    this.setState({
+        edit: !this.state.edit
+    })
+}
 
 ///COMMENTS TO BLOG SECTION///
 
@@ -170,6 +186,7 @@ render(){
         profilepic={post.profile_pic}
         userId = {post.user_id}
         user={this.props.user.user_id}
+        updateBlog={this.updateBlog}
         />
         
     })
@@ -187,7 +204,7 @@ render(){
             <div>        
                 {!this.state.toggleBlog?(<div className='postBtnContainer'><button className='composeBlogBtn' onClick={this.handleToggle}>Post</button></div>)
                 :
-                (<div> <PostBlog postBlog = {this.postBlog} toggle={this.handleToggle}/>  </div>)}               
+                    (<div> <PostBlog postBlog = {this.postBlog} toggle={this.handleToggle}/> </div>)}               
             </div>
 
         <section className='blogsAndComments'>          
