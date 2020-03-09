@@ -7,8 +7,8 @@
     height: 90vh;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)) , url(../../image/landingpage/desert_outdoors_outdoor_outside_nature_national_park_canyon-813795.jpg) center center;
     background-size: cover;
-
 }
+
 
 form {
     display: flex;
@@ -47,6 +47,9 @@ input {
     align-items: center;
     justify-content: center;
     
+}
+.login:hover{
+    box-shadow: inset 1px 1px 0 100vw rgba(0,0,0,0.2);
 }
 .loginBtn , .signupBtn, .registerBtn{
     color: white;

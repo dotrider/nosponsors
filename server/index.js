@@ -37,6 +37,7 @@ app.get('/auth/userSession', userSession);
 app.get('/auth/logout', logout);
 
 //BLOGS
+//FULL CRUD
 app.get('/api/blogs', getBlogs);
 app.post('/api/blogs', addBlog);
 app.delete('/api/blogs/:id', deleteBlog);

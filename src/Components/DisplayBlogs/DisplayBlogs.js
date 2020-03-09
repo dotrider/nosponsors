@@ -63,12 +63,12 @@ handleEditToggle = () => {
             <div>
             <section className='forum-grid'>     
                 <div className='userInfo'> 
-                    <div className='profilePic'><img src={profilepic}/></div>
+                    <div className='profilePic'><img alt='profilePic' src={profilepic}/></div>
                    <p className='userData'>Username</p> 
                    <p className='userData userName'>{username}</p>     
                    <p className='userData'>Date Joinned:</p> 
                 </div>
-                 <div className='blogTitle'><h2>{title}<p className='date'> <img className='clock' src={clockPic}/> {date}</p></h2><div>{user !== userId? null : <button className='menuBtn' onClick={this.toggleMenu}/>} 
+                 <div className='blogTitle'><h2>{title}<p className='date'> <img alt='clock' className='clock' src={clockPic}/> {date}</p></h2><div>{user !== userId? null : <button className='menuBtn' onClick={this.toggleMenu}/>} 
                 {this.state.displayMenu ? 
                 <div>
                 <button className='deleteBtn dltBlogBtn'onClick={()=> this.props.deleteBlog(blogId)}/> 

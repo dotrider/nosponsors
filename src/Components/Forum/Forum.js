@@ -1,7 +1,6 @@
 import React,{Component} from 'react';
 import { connect } from 'react-redux';
-import { setUser} from '../../redux/reducer';
-import {getSession} from '../../redux/reducer';
+import { setUser, getSession} from '../../redux/reducer';
 import PostBlog from '../PostBlog/PostBlog';
 import axios from 'axios';
 import DisplayBlogs from '../DisplayBlogs/DisplayBlogs';

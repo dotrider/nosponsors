@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import './Login.scss'
 import { connect } from "react-redux";
-import { setUser } from "../../redux/reducer";
+import { setUser, loggedIn } from "../../redux/reducer";
 
 
 class Login extends Component {
@@ -38,6 +38,7 @@ class Login extends Component {
     let body = { email, password };
     axios.post(`/auth/login`, body).then(res => {
       this.props.setUser(res.data);
+      this.props.loggedIn();
     this.props.history.push('/forum')
     }).catch(err => {
         this.setState({
@@ -63,6 +64,7 @@ class Login extends Component {
     let newUser = { username, email, password, profile_pic };
     const res = await axios.post(`/auth/register`, newUser);
     this.props.setUser(res.data);
+    this.props.loggedIn();
     this.props.history.push('/forum')
   };
 
@@ -169,7 +171,8 @@ class Login extends Component {
 const mapStateToProps = state => state;
 
 const mapDispatchToProps = {
-  setUser
+  setUser,
+  loggedIn
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

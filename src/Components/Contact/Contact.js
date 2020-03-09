@@ -6,6 +6,7 @@ const Contact = () => {
       
       <div className="contact">
         <iframe
+          title='form'
           src="https://services.cognitoforms.com/f/1nsywmJh4UC1cJ4bd3gokQ?id=1"
           frameborder="0"
           scrolling="yes"

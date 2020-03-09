@@ -2,11 +2,14 @@ import axios from 'axios';
 
 let initialState = {
     user: {},
-    loading: false
+    loading: false,
+    isLoggedIn: false
 }
 
 const SET_USER = 'SET_USER'
 const USER_SESSION = 'USER_SESSION'
+const LOGGEDIN = 'LOGGEDIN'
+const LOGGEDOUT = 'LOGGEDOUT'
 
 export function setUser(user){
     return {
@@ -24,6 +27,21 @@ export function getSession(){
     }
 }
 
+export function loggedIn(){
+    return {
+        type: LOGGEDIN,
+        payload: {isLoggedIn: true}
+    }
+}
+
+export function logOut(){
+    return{
+        type: LOGGEDOUT,
+        payload: {isLoggedIn: false}
+    }
+}
+
+
 export default function reducer(state = initialState, action){
     const {type, payload} = action;
 
@@ -36,6 +54,10 @@ export default function reducer(state = initialState, action){
             return {user: payload, loading: false}
         case USER_SESSION + '_REJECTED':
             return {...state, loading: true}
+        case LOGGEDIN: 
+            return  {...state, isLoggedIn: true}  
+        case LOGGEDOUT: 
+            return  {...state, isLoggedIn: false}      
         default:
             return state
     }

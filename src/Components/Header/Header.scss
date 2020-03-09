@@ -1,3 +1,4 @@
+@import '../../style/variables/variables.scss';
 //Media Ready
 
 .navBar {
@@ -26,7 +27,7 @@ a {
 }
 
 a:hover {
-  color: white;
+  color: $red;
 }
 
 

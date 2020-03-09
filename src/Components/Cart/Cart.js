@@ -74,7 +74,7 @@ class Cart extends Component{
               cart: res.data
           })
       
-        this.props.history.push('/cart')          
+        this.props.history.push('/merch')          
         }
 
 
@@ -96,7 +96,7 @@ class Cart extends Component{
        
         const mappedCart = this.state.cart.map(cart => {
             return <div key={Cart.id} className='cartItems'>
-                <div className='cartImage'><img className='cartProductImg' src={cart.product_img}/></div>  
+                <div className='cartImage'><img alt='productImage' className='cartProductImg' src={cart.product_img}/></div>  
                 <br/>
                 <div className='productInformation'>
                 <p><span>Product:</span> {cart.name}</p>

@@ -10,7 +10,7 @@ class EditBlog extends Component {
         }
     }
 
-    updateBlog = () => {
+    updatedBlog = () => {
         console.log('updateBlogClick!', this.updateBlog)
         let {blogId} = this.props
         let {blog_img, blog_title, blog} = this.state
@@ -43,7 +43,7 @@ class EditBlog extends Component {
                
                 <div className='cancelCont'>
                 <button className='cancelBtn' onClick={this.props.handleToggleE}/>
-                <input className='submitBtn' onClick={this.updateBlog} type='submit' value="Post" />
+                <input className='submitBtn' onClick={this.updatedBlog} type='submit' value="Post" />
                </div>
             
             </div>

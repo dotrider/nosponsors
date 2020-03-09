@@ -4,10 +4,7 @@ import axios from 'axios';
 
 
 class Products extends Component{
-    constructor(props){
-        super(props);
-        
-    }
+ 
 
 addToCart = (e) => {
     // console.log('add cart',this.addToCart)
@@ -29,7 +26,7 @@ addToCart = (e) => {
            <section className='productsss'>
            
                <div className='productImageContainer'>
-                   <img className='productImg' src={productImage}/>
+                   <img alt='productImage' className='productImg' src={productImage}/>
                </div>
                <div className='productInfo'>
                    <div>
