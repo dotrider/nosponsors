@@ -4,12 +4,14 @@
 .productImageContainer {
     height: 240px;
     width: 240px;
+    border-radius: 3px;
 }
 
 .productImg {
 display: block;
 margin: auto;
 width: 100%;
+border-radius: 3px;
 
 }
 
@@ -22,8 +24,10 @@ width: 100%;
 }
 
 .product {
-    font-family: $title;
+    font-family: $text;
     color: $red;
+    font-weight: 700;
+    font-size: 1.1rem;
 }
 
 .price {
@@ -31,13 +35,23 @@ width: 100%;
 }
 
 .cartBtn {
-    background: url(../../image/buttons/iconfinder_iconoteka_shopping_cart_add_b_s_3507741.png)  no-repeat top left;
+    background: url(../../image/buttons/add_shopping_cart_Black.svg)  no-repeat top left;
     background-size: contain;
     height: 35px;
     width: 35px;
     border: none;
     cursor: pointer;
     outline:none;
+}
+.cartBtn:hover {
+    background: url(../../image/buttons/add_shopping_cart_red.svg) no-repeat top left;
+    background-size: contain;
+    height: 35px;
+    width: 35px;
+    border: none;
+}
+.cartBtn:active {
+    transform: translateY(2px);
 }
 
 @media (min-width: 768px){
