@@ -85,6 +85,13 @@ p > span {
     font-family: $title;
 }
 
+.total > span {
+    color: $red;
+}
+.total {
+    color: white;
+}
+
 @media(min-width: 768px){
     .cart-container {
         display: grid;

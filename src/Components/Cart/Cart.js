@@ -117,7 +117,7 @@ class Cart extends Component{
             
                 </div>
                 <br/>
-                <div className='total'> Total: ${totalCart}</div> 
+                <div className='total'> Total: <span>$</span>{totalCart}</div> 
                 <br/>
                 <div className='stripe'>
                 <StripeCheckout
