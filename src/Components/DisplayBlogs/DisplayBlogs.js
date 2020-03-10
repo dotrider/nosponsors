@@ -47,13 +47,13 @@ handleEditToggle = () => {
         // console.log('USER!',this.props.user)
         // console.log('My unique blog id: ', this.props.blogId)
         // console.log(this.props.title)
-        const {title, blog, date, blogId, userId, username, user, profilepic} =this.props
+        const {title, blog, date, blogId, userId, username, user, profilepic, blogImg} =this.props
        
 
 
         const mappedComments = this.props.comments.map(comment => {
         return  <div className='commentCont'>
-                <div className='meta'> <p className='commentDate'>{moment(comment.post_date).format('lll')} <span className='commentUserName'>{this.props.username}</span></p> 
+                <div className='meta'> <p className='commentDate'>{moment(comment.post_date).format('lll')} <span className='commentUserName'>{comment.username}</span></p> 
                 {user !== comment.user_id? null : <button className='deleteBtn' onClick={() => this.props.deleteComment(comment.comment_id)}/>} 
                 </div>
                 <div key={comment.id} className='commentsSec'> {comment.comment}</div>
@@ -68,17 +68,21 @@ handleEditToggle = () => {
                    <p className='userData userName'>{username}</p>     
                    <p className='userData'>Date Joinned:</p> 
                 </div>
-                 <div className='blogTitle'><h2>{title}<p className='date'> <img alt='clock' className='clock' src={clockPic}/> {date}</p></h2><div>{user !== userId? null : <button className='menuBtn' onClick={this.toggleMenu}/>} 
-                {this.state.displayMenu ? 
-                <div>
-                <button className='deleteBtn dltBlogBtn'onClick={()=> this.props.deleteBlog(blogId)}/> 
-                {!this.state.toggleEdit? <button onClick={this.handleEditToggle} className='editBtn' />  : <EditBlog blogId={this.props.blogId} handleToggleE={this.handleEditToggle} updateBlog={this.props.updateBlog}/>} 
-                </div> 
-                
-                : '' } 
-                  </div>
-                 </div> 
-                <div className='blog'><p>{blog}</p></div> 
+                    <div className='blogTitle'><h2>{title}<p className='date'> <img alt='clock' className='clock' src={clockPic}/> {date}</p></h2>
+                    <div>{user !== userId? null : <button className='menuBtn' onClick={this.toggleMenu}/>} 
+                    {this.state.displayMenu ? 
+                    <div>
+                    <button className='deleteBtn dltBlogBtn'onClick={()=> this.props.deleteBlog(blogId)}/> 
+                    {!this.state.toggleEdit? <button onClick={this.handleEditToggle} className='editBtn' />  : <EditBlog blogId={this.props.blogId} handleToggleE={this.handleEditToggle} updateBlog={this.props.updateBlog}/>} 
+                    </div> 
+                    
+                    : '' } 
+                    </div>
+                    </div> 
+                    <div className='blog'>
+                    {/* <div className='blogImg'><img alt='postImg' src={blogImg}/></div> */}
+                    <p>{blog}</p>
+                    </div> 
                
                 {!this.state.toggleComment?
                 (<div className='replySect'><button onClick={this.handleCommentToggle} className='replyBtn'/></div>)

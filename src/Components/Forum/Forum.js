@@ -186,6 +186,7 @@ render(){
         userId = {post.user_id}
         user={this.props.user.user_id}
         updateBlog={this.updateBlog}
+        blogImg={post.blog_img}
         />
         
     })

@@ -19,14 +19,25 @@
     height: 25px;
 }
 
+.postInput::placeholder {
+    color: rgba(255, 255, 255, 0.537)
+}
+
 .blogPost {
     height: 50px;
     width: 90%;
 
 }
 
+.blogPost::placeholder {
+    color: rgba(255, 255, 255, 0.537)
+}
+
+
 .submitBtn {
     width: 80px;
+    font-size: .75rem;
+    background-color: $red;
 }
 
 input {

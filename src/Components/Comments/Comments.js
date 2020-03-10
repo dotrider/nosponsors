@@ -41,7 +41,7 @@ const {comment} = this.state
   
         <section className='composeComment'>                 
             <input className='commentInput' value={comment} name='comment' placeholder='comment here' onChange={this.handleChange}/>
-            <input className='submitBtn ' onClick={this.addComment} type='submit' value="add" />
+            <input className='submitBtn ' onClick={this.addComment} type='submit' value="Post" />
            
             <div> 
             <button className='cancelBtn' onClick={this.props.toggleComment}/>

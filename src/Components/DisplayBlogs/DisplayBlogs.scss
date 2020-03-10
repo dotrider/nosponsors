@@ -1,7 +1,7 @@
 @import '../../style/variables/variables.scss';
 
 hr {
-   background-color: red;
+   background-color: rgba(255, 0, 0, 0.524);
    width: 95%;
 }
 .forum-grid {
@@ -10,7 +10,6 @@ hr {
     width: 340px;
     grid-auto-rows: minmax(20px, auto);
     grid-column-gap:5px;
-    // background-color: rgba(0, 0, 0, 0.51);
     border-radius: 5px;
     justify-content: center;
     margin: 25px auto 0;
@@ -18,7 +17,6 @@ hr {
 .userInfo {
     grid-column: 1;
     grid-row: 1/6;
-    // background-color: rgba(25, 35, 73, 0.748);
     padding: 10px;
     color: $black;
     font-family: $title;
@@ -41,13 +39,13 @@ hr {
     color: $red;
     font-family: $text;
     font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .blog {
     grid-column: 2 / 4;
     grid-row:2/3;
     padding: 5px;
-    // box-shadow: 2px 2px 5px 0 rgba(42, 41, 41, 0.281);
     height: 40px;
     color: $black;
     font-family: $text;
@@ -64,7 +62,6 @@ hr {
     grid-column: 2/4;
     grid-row:5/6;
     padding: 5px;
-    // background-color: rgba(21, 17, 17, 0.137);
 
 }
 
@@ -99,7 +96,7 @@ hr {
 .commentUserName {
     color: $red;
     font-family: $text;
-    font-size: .85rem;
+    font-size: .95rem;
 }
 ///Buttons
 
@@ -156,7 +153,9 @@ hr {
     height: 60px;
     background-color: gray;
     margin: 0 auto;
-    border-radius: 50%;
+    border-radius: 15%;
+    font-size: .55rem;
+    text-align: center;
 }
 
 .userData {
@@ -167,7 +166,7 @@ hr {
 .profilePic > img {
     width: 60px;
     height: 60px;
-    border-radius: 50%;
+    border-radius: 15%;
 }
 
 .blogTitle > h2 {

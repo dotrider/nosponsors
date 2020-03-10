@@ -5,7 +5,7 @@
     justify-content: center;
     align-items: center;
     height: 90vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)) , url(../../image/landingpage/desert_outdoors_outdoor_outside_nature_national_park_canyon-813795.jpg) center center;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(24, 23, 23, 0.5)) , url(../../image/landingpage/desert_outdoors_outdoor_outside_nature_national_park_canyon-813795.jpg) center center;
     background-size: cover;
 }
 
@@ -87,7 +87,7 @@ input {
 }
 
 .loginText {
-    color: red;
-    text-shadow: 0 1px 1px rgb(185, 178, 178), 
+    color: white;
+    text-shadow: 0 1px 1px rgb(207, 28, 28), 
     1px 0 2px rgb(0, 0, 0);
 }

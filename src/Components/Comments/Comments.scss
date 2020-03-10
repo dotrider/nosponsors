@@ -1,5 +1,5 @@
 .composeComment {
-    // width: 90%;
+    width: 90%;
     background-color: rgba(85, 80, 80, 0.218);
     border-radius: 2px;
     margin: 5px;
@@ -12,5 +12,9 @@
     width: 90%;
     height: 25px;
     border-radius: 5px;
+}
+
+.commentInput::placeholder {
+    color: rgba(255, 255, 255, 0.537);
 }
 
