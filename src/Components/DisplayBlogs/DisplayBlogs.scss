@@ -10,7 +10,7 @@ hr {
     width: 340px;
     grid-auto-rows: minmax(20px, auto);
     grid-column-gap:5px;
-    // background-color: rgba(15, 12, 12, 0.81);
+    // background-color: rgba(0, 0, 0, 0.51);
     border-radius: 5px;
     justify-content: center;
     margin: 25px auto 0;
@@ -111,8 +111,19 @@ hr {
     border: none;
     cursor: pointer;
     outline:none;
+    margin-right: 10px;
 }
 
+.editBtn {
+    background: url(../../image/buttons/iconfinder_edit_2561427.svg) no-repeat top left;
+    background-size: contain;
+    height: 15px;
+    width: 15px;
+    border: none;
+    cursor: pointer;
+    outline:none;
+    margin-top: 12px;
+}
 
 .dltBlogBtn {
     vertical-align: top;

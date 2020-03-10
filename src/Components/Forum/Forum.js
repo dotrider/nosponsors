@@ -23,11 +23,11 @@ class Blogs extends Component{
  }
 
  componentDidMount(){
+     this.getAllBlogs()
+     this.getAllComments()
     // From my join table - blog and comments => this.getBlogsAndComments()
     // this.props.getSession()
     // this.props.setUser()
-    this.getAllBlogs()
-    this.getAllComments()
     // console.log('ComponentDidMount', this.props)
   
 }
@@ -131,12 +131,13 @@ deleteComment = (id) => {
 //     })
 // }
 
-logout = () => {
-     console.log('logout',this.logout)
-    axios.get('/auth/logout')
-    this.props.setUser({})
-    this.props.history.push('/')
-  }
+//Moved Logout to Header
+// logout = () => {
+//      console.log('logout',this.logout)
+//     axios.get('/auth/logout')
+//     this.props.setUser({})
+//     this.props.history.push('/')
+//   }
 
 
 handleToggle =()=> {
@@ -148,7 +149,7 @@ handleToggle =()=> {
 
 render(){
 
-    console.log('userSession on redux', this.props.user)
+    // console.log('userSession on redux', this.props.user)
     //From my join table - blog and comments
     // const mappedComments = this.state.blogAndComments.map(post => {
     //     return <DisplayBlogs key={post.id} title={post.blog_title} blog={post.blog} postComment={this.postComment}/>})
@@ -169,8 +170,7 @@ render(){
         })
         // console.log('mjs', post.post_date)
         // console.log('username!', post.user_id.username)
-        return <DisplayBlogs 
-        key={post.id} 
+        return <DisplayBlogs key={post.id} 
         blogId={post.blog_id} 
         title={post.blog_title} 
         blog={post.blog} 
@@ -198,7 +198,6 @@ render(){
          {/* <Header logout={this.logout}/>  */}
          <div className='subHeading'>
          <h2 className='greeting'>Hello, <span className='greeting userNameSub'>{this.props.user.username}</span></h2>
-            <button className='logoutBtn' onClick={this.logout}>Logout</button>
             </div>
             <div>        
                 {!this.state.toggleBlog?(<div className='postBtnContainer'><button className='composeBlogBtn' onClick={this.handleToggle}>Post</button></div>)
