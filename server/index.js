@@ -63,7 +63,11 @@ app.get('/api/cart', getCart);
 //CHECKOUT
 app.delete('/api/checkout/:id', checkOut);//Working on checkout
 
-
-
+////
+const path = require('path'); // Usually moved to the start of file
+app.get('*', (req, res)=>{
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+});
+////
 
 app.listen(SERVER_PORT, () => console.log(`Running on ${SERVER_PORT}`));
