@@ -49,7 +49,7 @@ const {blog_img, blog_title, blog} = this.state
         <section className='composeBlog'>   
             
                 <input className='postInput' value={blog_img} name='blog_img' placeholder='Image' onChange={this.handleChange}/>
-                <input className='postInput' value={blog_title} name='blog_title' placeholder='Title' onChange={this.handleChange}/>
+                <input className='postInput' value={blog_title} name='blog_title' placeholder='Title' maxlength="40" onChange={this.handleChange}/>
                 <input className='blogPost' value={blog} name='blog' placeholder='blog'onChange={this.handleChange}/>
              
                
