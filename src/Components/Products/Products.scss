@@ -5,6 +5,7 @@
     height: 240px;
     width: 240px;
     border-radius: 3px;
+    background-color: white;
 }
 
 .productImg {
@@ -21,6 +22,7 @@ border-radius: 3px;
     color: $black;
     display: flex;
     justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.061);
 }
 
 .product {
@@ -62,3 +64,13 @@ border-radius: 3px;
     }
 }
 
+
+@media (min-width: 1044px) {
+
+    .productImageContainer {
+        height: 200px;
+        width: 200px;
+        border-radius: 3px;
+    }
+    
+}

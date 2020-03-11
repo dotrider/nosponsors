@@ -3,9 +3,9 @@ import './Contact.scss';
 
 const Contact = () => {
   return (
-    <div>
+    <div className='contactComponent'>
       
-      <div className="contact">
+      <div className='contactForm'>
         <iframe
           title='form'
           src="https://services.cognitoforms.com/f/1nsywmJh4UC1cJ4bd3gokQ?id=1"

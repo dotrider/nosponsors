@@ -99,7 +99,7 @@ class Cart extends Component{
                 <div className='cartImage'><img alt='productImage' className='cartProductImg' src={cart.product_img}/></div>  
                 <br/>
                 <div className='productInformation'>
-                <p><span>Product:</span> {cart.name}</p>
+                <p>{cart.name}</p>
                 <p><span>Price:</span> ${cart.price}</p>
                 <p><span>Quantity:</span> {cart.quantity}</p> 
                 </div>
@@ -111,14 +111,14 @@ class Cart extends Component{
                 </div> 
         })
         return(
-            <section className='cartSec'>
+            <section className='cartComponent'>
                 <div className='cart-container'>
                 {mappedCart} 
-            
-                </div>
                 <br/>
                 <div className='total'> Total: <span>$</span>{totalCart}</div> 
+                </div>
                 <br/>
+                
                 <div className='stripe'>
                 <StripeCheckout
                     stripeKey='pk_test_52pNzyxRFrzjtCyGvyiEkrmc00kviWNBzl'
@@ -127,9 +127,11 @@ class Cart extends Component{
                     shippingAddress
                     name='#NoSponsors'
                     amount={totalCart * 100}
-            />
+                />
        
                 </div>
+                <br/>
+                
             </section>
         )
     }

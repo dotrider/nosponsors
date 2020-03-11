@@ -23,7 +23,7 @@ addToCart = (e) => {
     const {productName, productImage, productPrice, product_id} = this.props
 
        return(
-           <section className='productsss'>
+           <section className='individualProducts'>
            
                <div className='productImageContainer'>
                    <img alt='productImage' className='productImg' src={productImage}/>
