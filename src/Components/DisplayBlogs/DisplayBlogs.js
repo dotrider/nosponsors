@@ -60,7 +60,7 @@ handleEditToggle = () => {
          </div>
         })
         return(
-            <div>
+          <div>
             <section className='forum-grid'>     
                 <div className='userInfo'> 
                     <div className='profilePic'><img alt='profilePic' src={profilepic}/></div>
@@ -74,7 +74,7 @@ handleEditToggle = () => {
                     {this.state.displayMenu ? 
                     <div>
                     <button className='deleteBtn dltBlogBtn'onClick={()=> this.props.deleteBlog(blogId)}/> 
-                    {!this.state.toggleEdit? <button onClick={this.handleEditToggle} className='editBtn' />  : <EditBlog blogId={this.props.blogId} handleToggleE={this.handleEditToggle} updateBlog={this.props.updateBlog}/> } 
+                    {!this.state.toggleEdit? <button onClick={this.handleEditToggle} className='editBtn' />  : <EditBlog blogId={this.props.blogId} handleToggleE={this.handleEditToggle} updateBlog={this.props.updateBlog}/>} 
                     </div> 
                     
                     : '' } 
@@ -82,7 +82,7 @@ handleEditToggle = () => {
                     </div> 
                     <div className='blog'>
                     {/* <div className='blogImg'><img alt='postImg' src={blogImg}/></div> */}
-                    <p>{blog}</p>
+                   <p>{blog}</p> 
                     </div> 
                
                 {!this.state.toggleComment?
@@ -93,11 +93,10 @@ handleEditToggle = () => {
                 <div className = 'commentsC'>
                  {mappedComments} 
                 </div>
-                
             </section>
-           
-               <hr/>
-           </div>
+            <hr/>
+            </div>   
+       
         
         )
     }

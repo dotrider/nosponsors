@@ -210,8 +210,9 @@ render(){
             {/* From my join table - blog and comments {mappedComments} */}
             {mappedblogs}
             {/* {mappedComments} */}
-            </section>
-           </section>
+         </section>
+           
+        </section>
     )
 }
 

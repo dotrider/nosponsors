@@ -2,9 +2,13 @@
 
 
 hr {
-   background-color: rgba(255, 0, 0, 0.524);
-   width: 95%;
+    height: 1px;
+    border: 0;
+    color: rgba(51, 51, 51, 0.435);
+    background-color: #333;
+    width: 90%;
 }
+
 .forum-grid {
     display: grid;
     grid-template-columns: 100px 130px 130px;
@@ -47,12 +51,8 @@ hr {
     grid-column: 2 / 4;
     grid-row:2/3;
     padding: 5px;
-    height: 40px;
     color: $black;
     font-family: $text;
-}
-.replySect {
-    height: 5px;
 }
 
 .comments {
