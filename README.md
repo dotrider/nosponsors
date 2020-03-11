@@ -6,11 +6,12 @@
 <li>redux</li>
 <li>hosted site</li>
 <li>redux</li>
-<li>google sign in</li>
+<li>react stripe</li>
 </ul>
 
 ICEBOX
--- attend event button 
+-- add store
+-- scss
 
 <br/>
 *depencecies*
