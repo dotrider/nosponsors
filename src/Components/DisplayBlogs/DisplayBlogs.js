@@ -68,12 +68,13 @@ handleEditToggle = () => {
                    <p className='userData userName'>{username}</p>     
                    <p className='userData'>Date Joinned:</p> 
                 </div>
+
                     <div className='blogTitle'><h2>{title}<p className='date'> <img alt='clock' className='clock' src={clockPic}/> {date}</p></h2>
                     <div>{user !== userId? null : <button className='menuBtn' onClick={this.toggleMenu}/>} 
                     {this.state.displayMenu ? 
                     <div>
                     <button className='deleteBtn dltBlogBtn'onClick={()=> this.props.deleteBlog(blogId)}/> 
-                    {!this.state.toggleEdit? <button onClick={this.handleEditToggle} className='editBtn' />  : <EditBlog blogId={this.props.blogId} handleToggleE={this.handleEditToggle} updateBlog={this.props.updateBlog}/>} 
+                    {!this.state.toggleEdit? <button onClick={this.handleEditToggle} className='editBtn' />  : <EditBlog blogId={this.props.blogId} handleToggleE={this.handleEditToggle} updateBlog={this.props.updateBlog}/> } 
                     </div> 
                     
                     : '' } 
