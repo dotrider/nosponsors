@@ -20,10 +20,11 @@ export function setUser(user){
 
 
 export function getSession(){
+    console.log('session')
     let user = axios.get(`/auth/userSession`)
     return{
         type: USER_SESSION,
-        payload: user.data
+        payload: user
     }
 }
 
@@ -44,16 +45,16 @@ export function logOut(){
 
 export default function reducer(state = initialState, action){
     const {type, payload} = action;
-
+console.log('reducer', action)
     switch(type){
         case SET_USER:
-            return {...state, user: payload};
+            return {...state, user: payload, isLoggedIn: true};
         case USER_SESSION + '_PENDING':
             return {...state, loading: true}    
         case USER_SESSION + '_FULFILL':
-            return {user: payload, loading: false}
+            return {...state, user: payload.data, isLoggedIn: true, loading: false}
         case USER_SESSION + '_REJECTED':
-            return {...state, loading: true}
+            return {...state, loading: false}
         case LOGGEDIN: 
             return  {...state, isLoggedIn: true}  
         case LOGGEDOUT: 
@@ -62,3 +63,4 @@ export default function reducer(state = initialState, action){
             return state
     }
 }
+

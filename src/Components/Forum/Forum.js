@@ -22,26 +22,30 @@ class Blogs extends Component{
      
  }
 
- componentDidMount(){
-     this.getAllBlogs()
-     this.getAllComments()
+//  componentDidMount(){
+    //  this.getAllBlogs()//////////
+    //  this.getAllComments()/////////
     // From my join table - blog and comments => this.getBlogsAndComments()
-    // this.props.getSession()
+    // this.props.getSession()/////////
     // this.props.setUser()
     // console.log('ComponentDidMount', this.props)
   
-}
+// }
 
  
 ///BLOG SECTION///
- getAllBlogs = async () => {
-     const blogs = await axios.get(`/api/blogs`)
-    //  console.log('blogs',blogs.data)
-    //  console.log('postblog', blogs.data)
-     this.setState({
-         blogs: blogs.data
+ componentDidMount() {
+     this.props.getSession().then(() => {
+        axios.get(`/api/blogs`).then(res => {
+            this.setState({
+                blogs: res.data
+            })
+        })
+        this.getAllComments()
+     }).catch(() => {
+         this.props.history.push('/')
      })
- }
+} 
 
  postBlog = (newBlog) => {
     //  console.log(newBlog)
@@ -55,11 +59,6 @@ class Blogs extends Component{
 }
 
 deleteBlog = (id) => {
-    // console.log('deleteBlog', id)
-    // const {comments, blogs} = this.state
-    // if(comments.blog_id === blogs.blog_id){
-    //     axios.delete(`/api/comments/${id}`)
-    // }{
     axios.delete(`/api/blogs/${id}`).then(res => {
         this.setState({
             blogs: res.data
@@ -190,7 +189,7 @@ render(){
         />
         
     })
-
+    console.log('props', this.props.history)
 
     return(
        

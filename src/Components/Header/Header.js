@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import { connect } from 'react-redux'
 import logo from './../../image/logo/nosponsors_offroad_copy.png'
 import axios from 'axios'
-import {setUser, logOut} from '../../redux/reducer'
+import {setUser, getSession, logOut} from '../../redux/reducer'
 
 
 class Header extends Component{
@@ -28,6 +28,9 @@ class Header extends Component{
        this.props.setUser({})
        this.props.logOut()
     //    this.props.history.push('/')
+     }
+     componentDidMount(){
+         getSession()
      }
     
 
@@ -78,7 +81,8 @@ const mapStateToProps = state => state;
 
 const mapDispatchToProps = {
 setUser,    
-logOut
+logOut,
+getSession
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

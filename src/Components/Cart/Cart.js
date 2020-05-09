@@ -39,8 +39,8 @@ class Cart extends Component{
 
  
 
-    decreaseQty = (e) => {
-        axios.post(`/api/carts/${e.target.value}`).then(res => {
+    decreaseQty = (part) => {
+        axios.post(`/api/carts/${part}`).then(res => {
             this.setState({
                 cart: res.data
             })
@@ -85,7 +85,7 @@ class Cart extends Component{
         //     alert('SUCCESS!')
         //     }
 
-        
+ 
 
             // console.log('total', this.state.cart)
             const totalCart = this.state.cart.reduce((total, item) => {
@@ -94,7 +94,7 @@ class Cart extends Component{
             },0)    
     
        
-        const mappedCart = this.state.cart.map(cart => {
+        const mappedCart = this.state.cart.map(cart => { 
             return <div key={Cart.id} className='cartItems'>
                 <div className='cartImage'><img alt='productImage' className='cartProductImg' src={cart.product_img}/></div>  
                 <br/>

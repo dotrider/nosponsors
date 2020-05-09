@@ -55,6 +55,20 @@ module.exports = {
     },
 
     userSession: (req, res, next) => {
-        res.status(200).send(req.session.user)
+        console.log('session', req.session.user)
+        if(req.session.user){
+            res.status(200).send(req.session.user)
+        }else{
+            res.sendStatus(404)
+        }
     }
 }
+
+
+// const salt = bcrypt.genSaltSync(12)
+// const hash = bcrypt.hash(password, salt)
+
+// const newUser = await db.create_user([username, hash, email])
+// req.session.user = newUser[0]
+
+// res.status(201).send(req.session.user)
