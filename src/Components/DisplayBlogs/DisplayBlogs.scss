@@ -15,9 +15,11 @@ hr {
     width: 340px;
     grid-auto-rows: minmax(20px, auto);
     grid-column-gap:5px;
-    border-radius: 5px;
+    border-radius: 2px;
     justify-content: center;
     margin: 25px auto 0;
+    background-color: rgba(67, 66, 66, 0.263);
+    box-shadow: 0 4px 10px 3px rgba(29, 29, 29, 0.238);
 }
 .userInfo {
     grid-column: 1;
@@ -90,7 +92,7 @@ hr {
 .commentDate {
     font-size: .75rem;
     padding-bottom: 10px;
-    color: white;
+    color: red;
     font-family: $time;
 }
 
@@ -190,7 +192,7 @@ hr {
         grid-template-columns: 150px 230px 230px;
         width: 630px;
         grid-auto-rows: minmax(20px, auto);
-        background-color: rgba(253, 252, 252, 0.211);
+        // background-color: rgba(253, 252, 252, 0.211);
         border-radius: 8px;
         justify-content: center;
         margin: 25px auto 0;

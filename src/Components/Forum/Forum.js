@@ -197,7 +197,7 @@ render(){
         <section className='Mainblogs'>  
          {/* <Header logout={this.logout}/>  */}
          <div className='subHeading'>
-         <h2 className='greeting'>Hello, <span className='greeting userNameSub'>{this.props.user.username}</span></h2>
+         <h2 className='greeting'>Hello <span className=' userNameSub'>{this.props.user.username}</span></h2>
             </div>
             <div>        
                 {!this.state.toggleBlog?(<div className='postBtnContainer'><button className='composeBlogBtn' onClick={this.handleToggle}>Post</button></div>)

@@ -21,13 +21,14 @@
 }
 
 .userNameSub {
-   color: $red;
+   color: rgb(218, 15, 35);
 }
 
 .greeting {
    font-family: $text;
    font-size: 1.8rem;
    font-weight: 900;
+   color: black;
 }
 
 .logoutBtn {
@@ -48,14 +49,14 @@ padding-bottom: 100px;
 }
 
 .composeBlogBtn {
-	box-shadow:inset 0px 0px 11px 0px $red;
-	background:linear-gradient(to bottom, $red 55%, $red 100%);
+	box-shadow:inset 0px 3px 15px 4px red;
+	// background:linear-gradient(to bottom, $red 55%, $red 100%);
 	background-color:$red;
 	border-radius:1px;
 	border:1px solid $red;
 	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
+   cursor:pointer;
+   color: white;
 	font-family:$text;
 	font-size:1.1rem;
 	font-weight:bold;
@@ -75,8 +76,8 @@ padding-bottom: 100px;
    }
 
    .composeBlogBtn {
-      border-radius:10px;
-      width:200px;
+      border-radius:7px;
+      width:150px;
       font-size: 1rem;
    }
 
