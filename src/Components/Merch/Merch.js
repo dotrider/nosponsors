@@ -18,7 +18,7 @@ componentDidMount(){
 
 getAllProducts = () => {
     axios.get('/api/products').then(res => {
-        console.log('products', res.data)
+        // console.log('products', res.data)
         this.setState({
             products: res.data
         })
@@ -29,7 +29,7 @@ getAllProducts = () => {
     render(){
 
         let mappedProducts = this.state.products.map(product => {
-            return <Products 
+            return <Products key={product.product_id}
             productName={product.name}  
             productImage={product.product_img} 
             productPrice={product.price}

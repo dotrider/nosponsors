@@ -47,11 +47,11 @@ module.exports = {
     const { user_id } = req.session.user;
 
     db.get_cart(user_id).then(checkCart => {
-      console.log("decreasyQTY back end", checkCart);
+      // console.log("decreasyQTY back end", checkCart);
       let productExist = false;
       for (i = 0; i < checkCart.length; i++) {
         if (+checkCart[i].product_id === +id) {
-          console.log("it match!");
+          // console.log("it match!");
           productExist = true;
           let currentQty = +checkCart[i].quantity;
           let tableId = +checkCart[i].id;

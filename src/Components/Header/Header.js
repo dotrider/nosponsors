@@ -23,7 +23,7 @@ class Header extends Component{
     }
 
     logout = () => {
-        console.log('logout',this.logout)
+        // console.log('logout',this.logout)
        axios.get('/auth/logout')
        this.props.setUser({})
        this.props.logOut()

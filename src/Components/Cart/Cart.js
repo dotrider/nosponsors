@@ -14,14 +14,14 @@ class Cart extends Component{
     }
 
     componentDidMount(){
-        console.log('C.D.M.Cart', this.getCart)
+        // console.log('C.D.M.Cart', this.getCart)
         this.getCart()
 
     }
 
     getCart = () => {
         axios.get('/api/cart').then(res => {
-            console.log('cart',res.data)
+            // console.log('cart',res.data)
             this.setState({
                 cart: res.data
             })
@@ -67,7 +67,7 @@ class Cart extends Component{
     
 
     handleToken = async () => {
-        console.log('hit!!!', this.handleToken)
+        // console.log('hit!!!', this.handleToken)
         const id = this.state.cart[0].cart_id
         const res = await axios.delete(`/api/checkout/${id}`)
           this.setState = ({
@@ -95,7 +95,7 @@ class Cart extends Component{
     
        
         const mappedCart = this.state.cart.map(cart => { 
-            return <div key={Cart.id} className='cartItems'>
+            return <div className='cartItems'>
                 <div className='cartImage'><img alt='productImage' className='cartProductImg' src={cart.product_img}/></div>  
                 <br/>
                 <div className='productInformation'>

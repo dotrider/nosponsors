@@ -67,9 +67,9 @@ deleteBlog = (id) => {
 }
 
 updateBlog = (blogId, blog) => {
-    console.log('updateAxios', blogId, blog)
+    // console.log('updateAxios', blogId, blog)
     axios.put( `/api/blog/${blogId}`, blog).then(res => {
-        console.log('update', res.data)
+        // console.log('update', res.data)
         this.setState({
             blogs: res.data
         })
@@ -169,7 +169,7 @@ render(){
         })
         // console.log('mjs', post.post_date)
         // console.log('username!', post.user_id.username)
-        return <DisplayBlogs key={post.id} 
+        return <DisplayBlogs key={post.blog_id} 
         blogId={post.blog_id} 
         title={post.blog_title} 
         blog={post.blog} 
@@ -189,7 +189,7 @@ render(){
         />
         
     })
-    console.log('props', this.props.history)
+    // console.log('props', this.props.history)
 
     return(
        

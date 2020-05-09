@@ -20,7 +20,7 @@ export function setUser(user){
 
 
 export function getSession(){
-    console.log('session')
+    // console.log('session')
     let user = axios.get(`/auth/userSession`)
     return{
         type: USER_SESSION,
@@ -45,7 +45,7 @@ export function logOut(){
 
 export default function reducer(state = initialState, action){
     const {type, payload} = action;
-console.log('reducer', action)
+// console.log('reducer', action)
     switch(type){
         case SET_USER:
             return {...state, user: payload, isLoggedIn: true};

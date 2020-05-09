@@ -12,7 +12,7 @@ class EditBlog extends Component {
     }
 
     updatedBlog = () => {
-        console.log('updateBlogClick!', this.updateBlog)
+        // console.log('updateBlogClick!', this.updateBlog)
         let {blogId} = this.props
         let {blog_img, blog_title, blog} = this.state
         let updatedBlog = {
@@ -26,14 +26,14 @@ class EditBlog extends Component {
     }
 
     handleChange = (e) => {
-        console.log('edit', e.target.value)
+        // console.log('edit', e.target.value)
         this.setState({
             [e.target.name]: e.target.value
         })
     }
 
     render(){
-        console.log('editComp',this.props.blogId)
+        // console.log('editComp',this.props.blogId)
         const {blog_img, blog_title, blog} = this.state
         return(
             <div className='editContainer'>

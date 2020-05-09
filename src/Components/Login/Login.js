@@ -19,7 +19,7 @@ class Login extends Component {
   }
 
   handleChange = e => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     this.setState({
       [e.target.name]: e.target.value
     });
@@ -34,7 +34,7 @@ class Login extends Component {
   // };
   
   login = (email, password) => {
-    console.log('login',this.props.user)
+    // console.log('login',this.props.user)
     let body = { email, password };
     axios.post(`/auth/login`, body).then(res => {
       this.props.setUser(res.data);
@@ -72,7 +72,7 @@ class Login extends Component {
 
   render() {
     const { username, email, password, profile_pic, register } = this.state;
-    console.log('user',this.props.user);
+    // console.log('user',this.props.user);
     return (
       <section className='mainCont'> 
   

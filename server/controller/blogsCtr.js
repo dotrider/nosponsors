@@ -10,7 +10,7 @@ module.exports = {
         const {post_date, blog_img, blog_title, blog} = req.body
         // const {blog_img, blog_title, blog} = obj
         const {user_id} = req.session.user
-        console.log(req.session.user)
+        // console.log(req.session.user)
         const addblog = await db.create_blog([blog_img, blog_title, blog, user_id, post_date ]).catch(err => console.log(err))
         res.status(200).send(addblog)
     },

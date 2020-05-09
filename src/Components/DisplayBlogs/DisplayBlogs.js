@@ -47,12 +47,12 @@ handleEditToggle = () => {
         // console.log('USER!',this.props.user)
         // console.log('My unique blog id: ', this.props.blogId)
         // console.log(this.props.title)
-        const {title, blog, date, blogId, userId, username, user, profilepic, blogImg} =this.props
+        const {title, blog, date, blogId, userId, username, user, profilepic} =this.props
        
 
 
         const mappedComments = this.props.comments.map(comment => {
-        return  <div className='commentCont'>
+        return  <div key={comment.comment_id} className='commentCont'>
                 <div className='meta'> <p className='commentDate'>{moment(comment.post_date).format('lll')} <span className='commentUserName'>{comment.username}</span></p> 
                 {user !== comment.user_id? null : <button className='deleteBtn' onClick={() => this.props.deleteComment(comment.comment_id)}/>} 
                 </div>
