@@ -46,7 +46,7 @@ class Login extends Component {
     let newUser = { username, email, password, profile_pic };
     const res = await axios.post(`/auth/register`, newUser);
     this.props.setUser(res.data);
-    // this.props.loggedIn();
+    this.props.loggedIn();
     this.props.history.push('/forum')
   };
 
