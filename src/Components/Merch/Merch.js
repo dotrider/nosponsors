@@ -1,4 +1,6 @@
 import React,{Component} from 'react';
+import { connect } from 'react-redux';
+import { getSession } from '../../redux/reducer';
 import axios from 'axios';
 import Products from '../Products/Products';
 import './Merch.scss'
@@ -13,16 +15,19 @@ class Merch extends Component{
 
 
 componentDidMount(){
+
     this.getAllProducts()
 }
 
 getAllProducts = () => {
-    axios.get('/api/products').then(res => {
+    this.props.getSession().then( () => {
+        axios.get('/api/products').then(res => {
         // console.log('products', res.data)
         this.setState({
             products: res.data
         })
     })
+})
 }
 
 
@@ -47,5 +52,9 @@ getAllProducts = () => {
     }
 }
 
-export default Merch
+const mapDispatchToProps = {
+    getSession
+}
+
+export default connect(null, mapDispatchToProps)(Merch)
 

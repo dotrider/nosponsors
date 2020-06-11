@@ -12,6 +12,7 @@ const LOGGEDIN = 'LOGGEDIN'
 const LOGGEDOUT = 'LOGGEDOUT'
 
 export function setUser(user){
+    // console.log('setUser',user)
     return {
         type: SET_USER,
         payload: user
@@ -20,8 +21,8 @@ export function setUser(user){
 
 
 export function getSession(){
-    // console.log('session')
     let user = axios.get(`/auth/userSession`)
+    // console.log('session', user)
     return{
         type: USER_SESSION,
         payload: user
@@ -51,7 +52,7 @@ export default function reducer(state = initialState, action){
             return {...state, user: payload, isLoggedIn: true};
         case USER_SESSION + '_PENDING':
             return {...state, loading: true}    
-        case USER_SESSION + '_FULFILL':
+        case USER_SESSION + '_FULFILLED':
             return {...state, user: payload.data, isLoggedIn: true, loading: false}
         case USER_SESSION + '_REJECTED':
             return {...state, loading: false}

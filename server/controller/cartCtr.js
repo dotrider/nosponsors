@@ -70,6 +70,7 @@ module.exports = {
   getCart: async (req, res, next) => {
       db = req.app.get('db')
         const {user_id} = req.session.user
+  
 
         db.get_cart(user_id).then(cart => {
             res.status(200).send(cart)

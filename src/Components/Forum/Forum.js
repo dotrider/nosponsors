@@ -14,23 +14,12 @@ class Blogs extends Component{
      super(props);
      this.state = {
          blogs: [], 
-        // From my join table - blog and comments => blogAndComments: [],
         comments:[],
         toggleBlog: false,
         edit:false
      }
      
  }
-
-//  componentDidMount(){
-    //  this.getAllBlogs()//////////
-    //  this.getAllComments()/////////
-    // From my join table - blog and comments => this.getBlogsAndComments()
-    // this.props.getSession()/////////
-    // this.props.setUser()
-    // console.log('ComponentDidMount', this.props)
-  
-// }
 
  
 ///BLOG SECTION///
@@ -49,7 +38,6 @@ class Blogs extends Component{
 
  postBlog = (newBlog) => {
     //  console.log(newBlog)
-    //  const post_date = new Date(Date.now()).toISOString()
     axios.post('/api/blogs', newBlog).then(res => {
 
        this.setState({
@@ -110,35 +98,6 @@ deleteComment = (id) => {
        
 }
 
-// handleCommentClick = (comment, blog_id) => {
-//     let body = {comment, blog_id}
-//     axios.post('/api/comments', body).then( res => {
-//         this.setState({
-//             comments: res.data
-//         })
-//     })
-
-// }
-/////////////
-
-//From my join table - blog and comments
-// getBlogsAndComments = async () => {
-//     const blogAndComments = await axios.get('/api/get_blog_comments')
-//     console.log('blogAndComments', blogAndComments.data)
-//     this.setState({
-//         blogAndComments: blogAndComments.data
-//     })
-// }
-
-//Moved Logout to Header
-// logout = () => {
-//      console.log('logout',this.logout)
-//     axios.get('/auth/logout')
-//     this.props.setUser({})
-//     this.props.history.push('/')
-//   }
-
-
 handleToggle =()=> {
     this.setState({
         toggleBlog: !this.state.toggleBlog
@@ -147,39 +106,20 @@ handleToggle =()=> {
 
 
 render(){
-
-    // console.log('userSession on redux', this.props.user)
-    //From my join table - blog and comments
-    // const mappedComments = this.state.blogAndComments.map(post => {
-    //     return <DisplayBlogs key={post.id} title={post.blog_title} blog={post.blog} postComment={this.postComment}/>})
-    // const mappedComments = this.state.blogAndComments.map(data => {
-    //     return <div>
-    //         <p>{data.blog}</p>
-    //         <p>{data.comment}</p>
-    //     </div>
-    // })
-
-//////////////////
-// console.log("COMMENTS!", this.state.comments)
-// console.log("POSTS!", this.state.blogs)
-
     const mappedblogs = this.state.blogs.map(post => {
         const filteredComments = this.state.comments.filter(comment => {
             return comment.blog_id === post.blog_id
         })
-        // console.log('mjs', post.post_date)
-        // console.log('username!', post.user_id.username)
+
         return <DisplayBlogs key={post.blog_id} 
         blogId={post.blog_id} 
         title={post.blog_title} 
         blog={post.blog} 
         comments={filteredComments}
         postComment={this.postComment}
-        // date={post.post_date}
         date = {moment(post.post_date).format('lll')}
         deleteComment={this.deleteComment}
         deleteBlog={this.deleteBlog}
-        // username={this.props.user.username}//for user session
         username={post.username}
         profilepic={post.profile_pic}
         userId = {post.user_id}
@@ -195,7 +135,6 @@ render(){
        
 
         <section className='Mainblogs'>  
-         {/* <Header logout={this.logout}/>  */}
          <div className='subHeading'>
          <h2 className='greeting'>Hello <span className=' userNameSub'>{this.props.user.username}</span></h2>
             </div>
@@ -206,9 +145,7 @@ render(){
             </div>
 
         <section className='blogsAndComments'>          
-            {/* From my join table - blog and comments {mappedComments} */}
             {mappedblogs}
-            {/* {mappedComments} */}
          </section>
            
         </section>

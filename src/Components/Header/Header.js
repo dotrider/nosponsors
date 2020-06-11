@@ -11,8 +11,7 @@ class Header extends Component{
     constructor(){
         super();
         this.state = {
-            toggleNav: false,
-            loggin: false
+            toggleNav: false
         }
     }
 
@@ -30,16 +29,17 @@ class Header extends Component{
     //    this.props.history.push('/')
      }
      componentDidMount(){
-         getSession()
+         this.props.getSession()
      }
     
 
     render(){
-       
+    //    console.log('props', this.props.isLoggedIn)
     return(
         
         <header>
-        {this.props.isLoggedIn ? 
+        {this.props.isLoggedIn
+        ? 
         <div>
         <div className='navBar'>
           

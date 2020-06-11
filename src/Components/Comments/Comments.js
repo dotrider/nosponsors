@@ -13,7 +13,7 @@ class Comments extends Component{
 
 
 handleChange = (e) => {
-    console.log('handleChange',e.target.value)
+    // console.log('handleChange',e.target.value)
     this.setState({
         [e.target.name]: e.target.value
     })

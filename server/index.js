@@ -24,7 +24,12 @@ app.use(session({
     }
 }))
 
-massive(CONNECTION_STR).then(db => {
+massive({
+    connectionString: CONNECTION_STR,
+    ssl: {
+        rejectUnauthorized: false
+    }
+}).then(db => {
     app.set('db', db);
     console.log(`in Sync with DB`)
 })

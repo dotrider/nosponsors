@@ -25,13 +25,6 @@ class Login extends Component {
     });
   };
 
-  // login = async (email, password) => {
-  //   console.log('login',this.props.user)
-  //   let body = { email, password };
-  //   const res = await axios.post(`/auth/login`, body)
-  //   this.props.setUser(res.data);
-  //   this.props.history.push('/forum')
-  // };
   
   login = (email, password) => {
     // console.log('login',this.props.user)
@@ -40,25 +33,14 @@ class Login extends Component {
       this.props.setUser(res.data);
       this.props.loggedIn();
     this.props.history.push('/forum')
+    this.setState({
+      login: true
+    })
     }).catch(err => {
-        this.setState({
-          login: true
-        })
+      console.log(err)
       });
   }
 
-// register = (username, email, password) => {
-// let newUser = {username, email, password};
-//   axios.post(`/auth/register`, newUser).then(res => {
-//     this.props.setUser(res.data);
-//     this.props.history.push(`/forum`)
-//   }).catch(err => {
-//     this.setState({
-//       register: true
-//     })
-//   });
- 
-// }
 
   register = async (username, email, password, profile_pic) => {
     let newUser = { username, email, password, profile_pic };
@@ -85,6 +67,7 @@ class Login extends Component {
                 this.login(email, password);
               }}>
               <input
+                required
                 type="email"
                 name="email"
                 placeholder="Email"
@@ -93,6 +76,7 @@ class Login extends Component {
               />
               <br/>
               <input
+                required
                 type="password"
                 name="password"
                 placeholder="Password"
@@ -117,6 +101,7 @@ class Login extends Component {
                 this.register(username, email, password, profile_pic)
               }}>
               <input 
+                required
                 type="text"
                 name="username"
                 placeholder="Username"
@@ -125,6 +110,7 @@ class Login extends Component {
               />
               <br/>
               <input 
+                required
                 type="email"
                 name="email"
                 placeholder="Email"
@@ -133,6 +119,7 @@ class Login extends Component {
               />
               <br/>
               <input 
+                required
                 type="password"
                 name="password"
                 placeholder="Password"
