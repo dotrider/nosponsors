@@ -124,3 +124,26 @@ user_id INT REFERENCES users(user_id),
 event_id INT REFERENCES events(event_id)  
 );
 ```
+## Login/Register page ##
+- Users can sign in or register if they don't have an account
+
+![](register.gif)
+
+## Forum page ##
+
+- Users can post and comment on other users post.
+- Every post displays the date it was post as well as authors details
+- Only users of original post can edit/delete their own post
+
+![](post.gif)
+
+## Merch/Cart ##
+
+- App includes a mini store where users can select add products to their cart
+- Cart section allows users to delete, decrease or add product quantity
+- React Stripe is integraded for check out
+
+![](store.gif)
+
+## App also contains a contact section ##
+- Cognito forms is integrated to the app which sends messages straight to the admin email for queries. 
