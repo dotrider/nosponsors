@@ -127,7 +127,7 @@ event_id INT REFERENCES events(event_id)
 ## Login/Register page ##
 - Users can sign in or register if they don't have an account
 
-![](register.gif)
+![](signin.gif)
 
 ## Forum page ##
 
