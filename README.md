@@ -1,18 +1,19 @@
-### nosponsors ###
+# #nosponsors off-road #
 
-No sponsors allows car/off-road enthusiast to collaborate with vehicle builds for off-road use. It's a community where users can exchange ideas, get tips, help or resources from the community with the goal to work on their own vehicle builds.
+No sponsors allows car/off-road enthusiast to collaborate with vehicle builds for off-road use. It's a community where users can exchange ideas, get tips, help or resources from the community with the goal to encourange users to work on their own vehicle builds.
 
 
-## Login/Register page ##
+## Login/Register section ##
 
 Landing page consist of an off-road terrain background with a login/register form
 - Users can signin or register if they don't have an account
 
-- Demo signin 
+Demo signin 
 - Email: test@email.com
 - Password: t
 
 ![](signin.gif)
+
 
 ## Forum page ##
 
@@ -22,6 +23,7 @@ Forum consist of the following features:
 - Only users with the original post can edit/delete their own post
 
 ![](post.gif)
+
 
 ## Merch/Cart ##
 
@@ -34,13 +36,17 @@ Support the #nosponsors community with a mini store feature
 
 ![](store.gif)
 
-## contact section ##
+
+## Contact section ##
 
 Questions or concerns?
 
-- Contact form from is integrated to the app which sends messages straight to the admin email for queries. 
+- Contact form from Cognito is integrated to the app which sends messages straight to the admin email for queries. 
 
 ![](contact.gif)
+
+
+
 
 
 ## App structure ##
