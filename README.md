@@ -1,5 +1,50 @@
 ### nosponsors ###
 
+No sponsors allows car/off-road enthusiast to collaborate with vehicle builds for off-road use. It's a community where users can exchange ideas, get tips, help or resources from the community with the goal to work on their own vehicle builds.
+
+
+## Login/Register page ##
+
+Landing page consist of an off-road terrain background with a login/register form
+- Users can signin or register if they don't have an account
+
+- Demo signin 
+- Email: test@email.com
+- Password: t
+
+![](signin.gif)
+
+## Forum page ##
+
+Forum consist of the following features:
+- Users can post and comment on other users post.
+- Every post displays the date it was post as well as authors details
+- Only users with the original post can edit/delete their own post
+
+![](post.gif)
+
+## Merch/Cart ##
+
+Support the #nosponsors community with a mini store feature
+
+- App includes a mini store where users can select add products to their cart
+- Cart section allows users to delete, decrease or increase product quantity
+- React Stripe is integraded for payment
+- Cart is clear after check out
+
+![](store.gif)
+
+## contact section ##
+
+Questions or concerns?
+
+- Contact form from is integrated to the app which sends messages straight to the admin email for queries. 
+
+![](contact.gif)
+
+
+## App structure ##
+
 <ul>MVP:
 <li>login functionality/authentication</li>
 <li>responsive design</li>
@@ -124,26 +169,3 @@ user_id INT REFERENCES users(user_id),
 event_id INT REFERENCES events(event_id)  
 );
 ```
-## Login/Register page ##
-- Users can sign in or register if they don't have an account
-
-![](signin.gif)
-
-## Forum page ##
-
-- Users can post and comment on other users post.
-- Every post displays the date it was post as well as authors details
-- Only users of original post can edit/delete their own post
-
-![](post.gif)
-
-## Merch/Cart ##
-
-- App includes a mini store where users can select add products to their cart
-- Cart section allows users to delete, decrease or add product quantity
-- React Stripe is integraded for check out
-
-![](store.gif)
-
-## App also contains a contact section ##
-- Cognito forms is integrated to the app which sends messages straight to the admin email for queries. 
