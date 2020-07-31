@@ -12,7 +12,7 @@ class Login extends Component {
       username: '',
       email: '',
       password: '',
-      profile_pic: '',
+      // profile_pic: '',
       register: false,
       login: false,
     };
@@ -42,8 +42,8 @@ class Login extends Component {
   }
 
 
-  register = async (username, email, password, profile_pic) => {
-    let newUser = { username, email, password, profile_pic };
+  register = async (username, email, password) => {
+    let newUser = { username, email, password };
     const res = await axios.post(`/auth/register`, newUser);
     this.props.setUser(res.data);
     this.props.loggedIn();
@@ -53,7 +53,7 @@ class Login extends Component {
  
 
   render() {
-    const { username, email, password, profile_pic, register } = this.state;
+    const { username, email, password, register } = this.state;
     // console.log('user',this.props.user);
     return (
       <section className='mainCont'> 
@@ -98,7 +98,7 @@ class Login extends Component {
           <div>
             <form onSubmit={(e) => {
                 e.preventDefault()
-                this.register(username, email, password, profile_pic)
+                this.register(username, email, password)
               }}>
               <input 
                 required
@@ -127,13 +127,13 @@ class Login extends Component {
                 onChange={this.handleChange}
               />
               <br/>
-              <input 
+              {/* <input 
                 type="profile_pic"
                 name="profile_pic"
                 placeholder="Profile Picture"
                 value={profile_pic}
                 onChange={this.handleChange}
-              />
+              /> */}
               <button className='registerBtn btn' type="submit" >Register</button> 
             </form>
        
